@@ -1,0 +1,78 @@
+@import '@styles/main';
+
+/* web */
+
+.dropdown {
+  cursor: pointer;
+
+  @include flex(column);
+
+  position: relative;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-color: $cracked-gray-300;
+  }
+}
+
+.dropdownButton {
+  @include flex(row);
+
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.dropdownOptions {
+  @include flex(column);
+
+  position: absolute;
+  top: 100%;
+  right: 0;
+
+  gap: 10px;
+  align-items: flex-start;
+
+  width: 100%;
+  min-width: 100px;
+  padding-block: 10px;
+
+  background-color: $neutral-white;
+  border-top: none;
+  border-radius: 2px 2px 16px 16px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+
+  transition: all 0.3s ease-in-out;
+
+  .dropdownOption {
+    padding: 4px 10px;
+
+    .text {
+      @include manrope-p4;
+
+      color: $cracked-gray-500;
+    }
+  }
+}
+
+
+/* tablet & mobile */
+
+@media only screen and (max-width: $breakpoint-lg) {
+  .dropdownOptions {
+    border: 1px solid $cracked-gray-100;
+
+    .dropdownOption{
+      .text{
+        @include manrope-caption;
+      }
+    }
+  }
+}

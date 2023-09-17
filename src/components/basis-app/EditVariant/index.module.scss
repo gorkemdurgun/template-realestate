@@ -1,0 +1,190 @@
+@import '@styles/main';
+
+.variantSection {
+  @include flex(column);
+
+  gap: 20px;
+
+  .inputSection {
+    @include flex(column);
+
+    gap: 4px;
+
+    .label {
+      @include manrope-p4;
+
+      color: $cracked-gray-700;
+    }
+
+    .input {
+      @include manrope-p4;
+
+      padding: 8px 12px;
+
+      border: 1px solid $cracked-gray-300;
+      border-radius: 4px;
+      outline: none;
+
+      transition: border-color 0.2s ease-in-out;
+
+      &:focus {
+        border-color: $action-orange;
+      }
+    }
+  }
+
+  .colorsSection {
+    @include flex(column);
+
+    gap: 4px;
+
+    .label {
+      @include manrope-p4;
+
+      color: $cracked-gray-700;
+    }
+
+    .list {
+      @include flex(row);
+
+      flex-wrap: wrap;
+      gap: 8px;
+
+      .item {
+        @include flex(row);
+
+        gap: 8px;
+        align-items: center;
+
+        padding: 6px 8px;
+
+        background-color: $neutral-white;
+        border: 1px solid $cracked-gray-300;
+        border-radius: 4px;
+
+        .checkbox {
+          width: 20px;
+          height: 20px;
+        }
+
+        .text {
+          @include manrope-p4;
+
+          color: $cracked-gray-700;
+        }
+
+        .colorBox {
+          @include fixed-size(20px, 20px);
+
+          border: 1px solid $cracked-gray-300;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  .sizesSection {
+    @include flex(column);
+
+    gap: 4px;
+
+    .label {
+      @include manrope-p4;
+
+      color: $cracked-gray-700;
+    }
+
+    .list {
+      @include flex(row);
+
+      flex-wrap: wrap;
+      gap: 8px;
+
+      .item {
+        @include flex(row);
+
+        gap: 8px;
+        align-items: center;
+
+        padding: 6px 8px;
+
+        background-color: $neutral-white;
+        border: 1px solid $cracked-gray-300;
+        border-radius: 4px;
+
+        .checkbox {
+          width: 20px;
+          height: 20px;
+        }
+
+        .text {
+          @include manrope-p4;
+
+          color: $cracked-gray-700;
+        }
+      }
+    }
+  }
+
+  .dimensionsSection {
+    @include flex(column);
+
+    gap: 4px;
+
+    .label {
+      @include manrope-p4;
+
+      color: $cracked-gray-700;
+    }
+
+    .list {
+      @include flex(column);
+
+      gap: 10px;
+
+      .item {
+        @include grid(4);
+        grid-template-columns: 1fr 4fr 4fr 4fr;
+
+        gap: 8px;
+        align-items: center;
+
+        padding: 6px 8px;
+
+        background-color: $neutral-white;
+        border: 1px solid $cracked-gray-300;
+        border-radius: 4px;
+
+        
+       .inputContainer{
+        @include flex(column);
+
+        gap: 4px;
+
+        
+        .label {
+          @include manrope-p4;
+  
+          color: $cracked-gray-700;
+        }
+  
+        .input {
+          @include manrope-p4;
+  
+          padding: 8px 12px;
+  
+          border: 1px solid $cracked-gray-300;
+          border-radius: 4px;
+          outline: none;
+  
+          transition: border-color 0.2s ease-in-out;
+  
+          &:focus {
+            border-color: $action-orange;
+          }
+        }
+       }
+      }
+    }
+  }
+}

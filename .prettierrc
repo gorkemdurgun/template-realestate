@@ -1,0 +1,24 @@
+{
+  "bracketSpacing": false,
+  "jsxBracketSameLine": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "endOfLine": "auto",
+  "arrowParens": "avoid",
+  "tabWidth": 2,
+  "printWidth": 120,
+  "semi": true,
+  "importOrder": [
+    "^react|react+$",
+    "^next|next/+$",
+    "^rsuite|rsuite|@rsuite|@rsuite/+$",
+    "<THIRD_PARTY_MODULES>",
+    "^@src|@src/|@services|@services/|@resources|@resources/|@components|@components/|@hooks|@hooks/|^@containers|@containers/|@components|@components/|@utils|@utils/|@redux|@redux/|@sagas|@sagas/|@actions|@actions/|@types|@types/|@store|@store+$|@contexts|@contexts/|@helpers|@helpers/|@jsons|@jsons/|@constants|@constants/",
+    "./partials",
+    "^[./]",
+    "<TYPE>",
+    "<TYPE>^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

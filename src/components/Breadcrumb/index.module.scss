@@ -1,0 +1,48 @@
+@import '@styles/main';
+
+/* web */
+
+.breadcrumbList {
+  @include flex(row);
+
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0 20px;
+
+  .breadcrumbItem {
+    @include flex(row);
+
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 0;
+    color: $cracked-gray-300;
+
+    .text {
+      @include manrope-p4;
+
+      text-transform: capitalize;
+    }
+
+    &:hover {
+      scale: none;
+    }
+
+    &:last-child {
+      color: $cracked-gray-500;
+    }
+
+    &:not(:first-child)::before {
+      cursor: default;
+      content: '>';
+      margin-right: 10px;
+    }
+  }
+}
+
+/* tablet & mobile */
+
+@media only screen and (max-width: $breakpoint-lg) {
+  .breadcrumbList {
+    padding: 0 10px;
+  }
+}

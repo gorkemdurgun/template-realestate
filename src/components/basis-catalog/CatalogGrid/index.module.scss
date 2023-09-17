@@ -1,0 +1,470 @@
+@import '@styles/main';
+
+/* web */
+
+.catalogContainer {
+  @include flex(column);
+
+  gap: 20px;
+  width: 100%;
+}
+
+.title {
+  @include flex(row);
+
+  align-items: center;
+  justify-content: space-between;
+
+  .text {
+    @include manrope-h3;
+
+    color: $primary-blue;
+  }
+
+  .seeAllButton {
+    background-color: transparent;
+
+    &:hover {
+      .text {
+        color: $action-orange;
+      }
+    }
+
+    .text {
+      @include manrope-p3;
+
+      color: $cracked-gray-400;
+      transition: color 0.3s ease-in-out;
+    }
+  }
+}
+
+.grid {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  border-radius: 4px;
+  outline: 1px solid $cracked-gray-200;
+
+  .gridItem {
+    cursor: pointer;
+
+    @include flex(column);
+
+    position: relative;
+
+    gap: 50px;
+    align-items: flex-start;
+
+    border-bottom: 1px solid $cracked-gray-200;
+
+    transition:
+      all 0.15s linear,
+      border-radius 0.25s ease-in-out;
+
+    .overview {
+      @include flex(column);
+
+      gap: 20px;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+
+      .textBox {
+        @include flex(column);
+
+        gap: 4px;
+        padding-top: 20px;
+        padding-inline: 20px;
+
+        .title {
+          @include manrope-p3;
+        }
+
+        .brief {
+          max-width: 400px;
+          margin-bottom: 20px;
+          color: $cracked-gray-700;
+
+          @include manrope-p4;
+
+          transition: color 0.2s ease-in-out;
+        }
+
+        .price {
+          @include manrope-p3;
+        }
+      }
+
+      .thumbnailBox {
+        align-self: center;
+
+        @include fixed-size(280px, 200px);
+
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    .variants {
+      position: relative;
+      overflow-x: auto;
+
+      @include flex(row);
+
+      max-width: 500px;
+      padding-bottom: 20px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .variant {
+        @include flex(column);
+
+        margin-left: 30px;
+
+        &:last-child {
+          margin-right: 30px;
+        }
+
+        .variantImage {
+          padding: 10px 20px;
+
+          border: 1px solid $cracked-gray-100;
+          border-bottom: 0;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+
+          transition: all 0.3s ease-in-out;
+
+          .imageBox {
+            @include fixed-size(80px, 60px);
+
+            transition: all 0.3s ease-in-out;
+          }
+        }
+
+        .variantSizes {
+          @include flex(row);
+
+          align-items: center;
+          justify-content: space-evenly;
+
+          height: 40px;
+
+          background-color: opacity($cracked-gray-100, 0.2);
+
+          transition: all 0.3s ease-in-out;
+
+          > span {
+            &[aria-disabled='true'] {
+              .size {
+                color: $cracked-gray-400;
+                text-decoration: line-through;
+              }
+            }
+
+            .size {
+              @include manrope-p4;
+
+              color: $neutral-black;
+            }
+          }
+        }
+
+        .variantColors {
+          @include flex(row);
+
+          gap: 8px;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 20px;
+
+          .colorBox {
+            @include fixed-size(24px, 24px);
+
+            border-radius: 50%;
+            box-shadow: 0 0 4px 1px $cracked-gray-200;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+
+    .arrows {
+      position: absolute;
+      top: 50%;
+
+      align-items: center;
+      justify-content: space-between;
+
+      width: 100%;
+
+      .arrowLeft {
+        @include fixed-size(24px, 24px);
+
+        cursor: pointer;
+        position: absolute;
+        border-radius: 50%;
+
+        .icon {
+          color: $neutral-black;
+          border-radius: 50%;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      .arrowRight {
+        @include fixed-size(24px, 24px);
+
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        border-radius: 50%;
+
+        .icon {
+          color: $neutral-black;
+          border-radius: 50%;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+
+    .features {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+
+      gap: 12px;
+
+      @include flex(column);
+
+      align-items: center;
+
+      .icon {
+        @include fixed-size(24px, 24px);
+
+        transition: all 0.3s ease-in-out;
+      }
+
+      .category {
+        @include flex(row);
+
+        gap: 8px;
+      }
+    }
+
+    .detailButton{
+      display: none;
+    }
+
+    /* selections */
+
+    &:nth-child(odd) {
+      /* border between columns */
+      border-right: 1px solid $cracked-gray-200;
+
+      &:hover {
+        border-radius: 10px 40px 40px 10px;
+      }
+    }
+
+    &:nth-child(even) {
+      &:hover {
+        border-radius: 40px 10px 10px 40px;
+      }
+    }
+
+    &:nth-last-child(-n + 2) {
+      /* border bottom none for last row */
+      border-bottom: none;
+    }
+
+    &:hover {
+      z-index: 1;
+      scale: 1.05;
+
+      color: $neutral-white;
+
+      background-color: $action-orange-6;
+      border-color: $action-orange-6;
+
+      .overview .textBox .brief {
+        color: $neutral-white;
+      }
+
+      .overview .thumbnailBox {
+        filter: drop-shadow(0 20px 10px rgb(0 0 0 / 75%));
+      }
+
+      .variants .variant {
+        .variantImage {
+          border-color: $neutral-white;
+        }
+
+        .variantSizes {
+          background-color: $neutral-white;
+        }
+      }
+
+      .arrows {
+        .arrowLeft,
+        .arrowRight {
+          .icon {
+            color: $neutral-white;
+          }
+        }
+      }
+
+      .features {
+        .icon {
+          scale: 1.2;
+          margin-bottom: 4px;
+          color: $neutral-white;
+        }
+      }
+    }
+  }
+}
+
+/* tablet & mobile */
+
+@media only screen and (max-width: $breakpoint-lg) {
+  .title {
+    padding-bottom: 5px;
+    border-bottom: 1px solid $primary-blue;
+
+    .text {
+      @include manrope-p3;
+    }
+  
+
+    .seeAllButton {
+      .text {
+        @include manrope-caption;
+      }
+    }
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    outline: none;
+
+    .gridItem {
+      padding-bottom: 20px;
+
+      border-top: none !important;
+      border-right: none !important;
+      border-bottom: 1px solid $cracked-gray-300 !important;
+      border-left: none !important;
+
+      &:last-child {
+        border-bottom: none !important;
+      }
+      
+      &:hover {
+        scale: 1 !important;
+        border-radius: 4px !important;
+      }
+
+      .overview {
+        .imageBox {
+          @include fixed-size(100%, 200px);
+        }
+
+        .textBox {
+          padding: 10px;
+
+          .title {
+            padding-bottom: 0;
+            border-bottom: none;
+
+           .text{
+              @include manrope-h4;
+           }
+
+           .seeAllButton {
+              .text {
+                @include manrope-caption;
+              }
+           }
+          }
+
+          .brief {
+            max-width: 70%;
+
+            @include manrope-caption;
+          }
+
+          .price {
+            @include manrope-p4;
+          }
+        }
+      }
+
+      .variants {
+        max-width: 100%;
+
+        .variant {
+          .variantImage {
+            padding: 10px 20px;
+
+            .imageBox {
+              @include fixed-size(80px, 60px);
+            }
+          }
+
+          .variantSizes {
+            height: 40px;
+          }
+
+          .variantColors {
+            padding: 10px 20px;
+          }
+        }
+      }
+
+      .arrows {
+        .arrowLeft,
+        .arrowRight {
+          @include fixed-size(24px, 24px);
+        }
+      }
+
+      .features {
+        .icon {
+          @include fixed-size(20px, 20px);
+        }
+      }
+
+      .detailButton{
+        @include flex(row);
+
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        margin-top: -40px;
+
+        background-color: $action-orange-6;
+        border-radius: 4px;
+
+        .text{
+          @include manrope-p3;
+
+          color: $neutral-white;
+        }
+
+        .icon{
+          @include fixed-size(24px, 24px);
+
+          color: $neutral-white;
+        }
+      }
+    }
+  }
+}

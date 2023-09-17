@@ -1,0 +1,473 @@
+@import '@styles/main';
+
+/* web */
+
+.detail {
+  @include grid(2);
+
+  grid-template-columns: 2fr 3fr;
+  gap: 40px;
+  align-items: flex-start;
+  width: 100%;
+
+  .leftSide {
+    @include flex(column);
+
+    gap: 20px;
+    width: 100%;
+
+    .thumbnailContainer {
+      @include flex(row);
+
+      position: relative;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 40px 20px;
+
+      background-color: opacity($cracked-gray-100, 0.3);
+      border-radius: 40px;
+
+      .arrowBox {
+        @include fixed-size(50px, 50px);
+
+        cursor: pointer;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: $neutral-white;
+        filter: drop-shadow(0 4px 4px rgb(0 0 0 / 5%));
+        border-radius: 50%;
+
+        &[data-direction='left'] {
+          left: -20px;
+        }
+
+        &[data-direction='right'] {
+          right: -20px;
+        }
+
+        .icon {
+          scale: 1.2;
+          color: $cracked-gray-600;
+        }
+      }
+
+      .imageBox {
+        @include fixed-size(400px, 300px);
+      }
+
+      .counter {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        padding: 5px 10px;
+
+        background-color: $neutral-white;
+        border-radius: 10px;
+
+        .counterText {
+          @include manrope-p4;
+
+          color: $cracked-gray-600;
+        }
+      }
+    }
+
+    .variantsContainer {
+      display: grid;
+      gap: 10px;
+
+      .variant {
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 10px;
+
+        border: 1px solid $cracked-gray-100;
+        border-radius: 10px;
+
+        .imageBox {
+          width: 100px;
+          height: 75px;
+        }
+      }
+    }
+  }
+
+  .rightSide {
+    @include flex(column);
+
+    gap: 20px;
+    width: 100%;
+
+    .featuresContainer {
+      @include flex(row);
+
+      gap: 10px;
+      align-items: center;
+
+      .feature {
+        @include flex(row);
+
+        gap: 4px;
+        align-items: center;
+
+        min-height: 22px;
+        padding: 4px 8px;
+
+        background-color: $cracked-gray-100;
+        border-radius: 10px;
+
+        .icon {
+          @include fixed-size(16px, 16px);
+
+          color: $cracked-gray-500;
+        }
+
+        .text {
+          cursor: default;
+
+          @include manrope-caption;
+
+          color: $cracked-gray-500;
+        }
+      }
+    }
+
+    .titleContainer {
+      @include flex(row);
+
+      gap: 10px;
+      align-items: center;
+
+      .title {
+        @include manrope-h2;
+
+        color: $neutral-black;
+      }
+
+      .usedColors {
+        @include flex(row);
+
+        gap: 4px;
+        align-items: center;
+
+        .colorBox {
+          @include fixed-size(20px, 20px);
+
+          border: 1px solid $cracked-gray-200;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .reviewContainer {
+      @include flex(row);
+
+      gap: 4px;
+
+      .reviewStars {
+        @include flex(row);
+
+        gap: 2px;
+        align-items: center;
+
+        .star {
+          @include fixed-size(24px, 24px);
+
+          color: $cracked-gray-500;
+          color: $action-orange-6;
+        }
+      }
+
+      .reviewScore {
+        display: inline-block;
+
+        @include manrope-p4;
+
+        color: $cracked-gray-500;
+
+        &::before {
+          content: '|';
+          margin: 0 10px;
+        }
+      }
+
+      .reviewCount {
+        display: inline-block;
+        margin-left: 10px;
+
+        @include manrope-caption;
+
+        color: $cracked-gray-500;
+      }
+    }
+
+    .priceContainer {
+      @include flex(row);
+
+      gap: 10px;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $cracked-gray-100;
+
+      .discountBox {
+        @include flex(row);
+
+        gap: 8px;
+        align-items: center;
+
+        height: fit-content;
+        padding: 4px 8px;
+
+        background-color: $dominant-green;
+        border-radius: 12px;
+
+        .icon {
+          @include fixed-size(16px, 16px);
+
+          color: $neutral-white;
+        }
+
+        .text {
+          @include manrope-p4;
+
+          color: $neutral-white;
+        }
+      }
+
+      .oldPrice {
+        @include manrope-p3;
+
+        color: $cracked-gray-500;
+        text-decoration: line-through;
+      }
+
+      .newPrice {
+        margin-left: 10px;
+
+        @include manrope-h4;
+
+        color: $neutral-black;
+      }
+    }
+
+    .sizeContainer {
+      @include flex(column);
+
+      gap: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $cracked-gray-100;
+
+      .sizeTitle {
+        @include manrope-p4;
+
+        color: $cracked-gray-800;
+      }
+
+      .sizeList {
+        @include flex(row);
+
+        gap: 10px;
+
+        .sizeBox {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          justify-content: center;
+
+          min-width: 60px;
+          padding: 10px 20px;
+
+          border: 1px solid $cracked-gray-300;
+          border-radius: 10px;
+
+          &:disabled {
+            cursor: not-allowed;
+            background-color: $cracked-gray-200;
+            border-color: $cracked-gray-200;
+
+            .text {
+              color: $cracked-gray-300;
+            }
+          }
+
+          &[aria-selected='true'] {
+            background-color: $dominant-green;
+            border-color: $dominant-green;
+
+            .text {
+              color: $neutral-white;
+            }
+          }
+
+          .text {
+            @include manrope-p4;
+
+            color: $cracked-gray-500;
+          }
+        }
+      }
+
+      .sizeInfo {
+        @include flex(row);
+
+        gap: 10px;
+        align-items: flex-end;
+
+        .name {
+          @include manrope-caption;
+
+          color: $cracked-gray-500;
+        }
+
+        .dimension {
+          @include manrope-caption;
+
+          color: $cracked-gray-500;
+        }
+      }
+    }
+
+    .colorContainer {
+      @include flex(column);
+
+      gap: 20px;
+
+      .colorTitle {
+        @include manrope-p4;
+
+        color: $cracked-gray-800;
+      }
+
+      .colorList {
+        @include flex(row);
+
+        gap: 10px;
+
+        .colorBox {
+          @include fixed-size(40px, 40px);
+
+          cursor: pointer;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          border: 1px solid $cracked-gray-200;
+          border-radius: 50%;
+
+          .color {
+            @include fixed-size(30px, 30px);
+
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+
+    .descriptionContainer {
+      @include flex(column);
+
+      gap: 20px;
+
+      .descriptionTitle {
+        @include manrope-p4;
+
+        color: $cracked-gray-800;
+      }
+
+      .descriptionText {
+        @include manrope-p4;
+
+        color: $cracked-gray-500;
+      }
+    }
+  }
+}
+
+/* tablet & mobile */
+
+@media only screen and (max-width: $breakpoint-lg) {
+  .detail {
+    @include grid(1);
+
+    .leftSide {
+      .thumbnailContainer {
+        padding: 0;
+
+        .counter {
+          top: 10px;
+          right: 10px;
+        }
+
+        .imageBox {
+          @include fixed-size(100%, auto);
+
+          aspect-ratio: 4/3;
+        }
+
+        .arrowBox {
+          display: none;
+        }
+      }
+    }
+
+    .rightSide {
+      .featuresContainer {
+        @include grid(2);
+
+        .feature {
+          @include grid(2);
+
+          grid-template-columns: 1fr 6fr;
+        }
+      }
+
+      .titleContainer {
+        .title {
+          @include manrope-p1;
+        }
+      }
+
+      .priceContainer {
+        @include flex(row-reverse);
+
+        justify-content: flex-end;
+
+        .discountBox {
+          margin-right: 0;
+          margin-left: auto;
+        }
+
+        .newPrice {
+          margin: 0;
+        }
+      }
+
+      .sizeContainer {
+        gap: 10px;
+      }
+
+      .descriptionContainer {
+        gap: 10px;
+
+        .descriptionText {
+          @include manrope-caption;
+        }
+      }
+    }
+  }
+}

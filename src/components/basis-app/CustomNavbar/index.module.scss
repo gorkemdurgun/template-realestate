@@ -1,0 +1,207 @@
+@import '@styles/main';
+
+.wrapper {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+}
+
+.wave {
+  pointer-events: none;
+
+  position: absolute !important;
+  top: 0;
+
+  aspect-ratio: 6/1;
+  width: 100%;
+  min-height: 130px;
+
+  > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    min-height: 360px;
+
+    object-fit: cover;
+  }
+}
+
+.navbar {
+  @include grid(3);
+
+  position: sticky;
+  z-index: 100;
+  top: 0;
+
+  align-items: center;
+  justify-content: space-between;
+
+  
+  padding-inline: 2rem;
+}
+
+.logo {
+  pointer-events: none;
+  user-select: none;
+  margin-left: 20px;
+
+  @include fixed-size(160px, 160px);
+}
+
+.navigations {
+  @include flex(row);
+
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+
+  .navButton {
+    cursor: pointer;
+
+    position: relative;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    @include flex(column);
+
+    &:hover {
+      /* scale reset */
+      scale: 1;
+
+      .inactiveText {
+        color: $neutral-white;
+      }
+
+      .activeIcon {
+        scale: 1.2;
+      }
+    }
+
+    .activeText {
+      @include manrope-p2;
+
+      color: $neutral-white;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .inactiveText {
+      @include manrope-p3;
+
+      color: $cracked-gray-100;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .activeIcon {
+      position: absolute;
+      transform: rotate(330deg);
+
+      margin-bottom: -85px;
+      padding: 4px;
+
+      color: $neutral-white;
+
+      background-color: $action-orange;
+      border-radius: 50%;
+
+      transition:
+        margin-bottom 0.1s ease-in-out,
+        opacity 0.3s ease-in-out,
+        scale 0.2s ease-in-out,
+        transform 0.8s ease-in-out;
+
+      @include fixed-size(28px, 28px);
+    }
+
+    .inactiveIcon {
+      position: absolute;
+      opacity: 0;
+
+      @include fixed-size(0, 0);
+    }
+  }
+}
+
+.actions {
+  @include flex(row);
+
+  gap: 32px;
+  align-items: center;
+  justify-content: flex-end;
+
+  .auths {
+    @include flex(row);
+
+    gap: 8px;
+
+    .actionButton {
+      display: flex;
+      padding: 6px 12px;
+      background-color: opacity($neutral-white, 0.1);
+      border-radius: 10px;
+
+      &:hover {
+        scale: 1.05;
+      }
+
+      .text {
+        @include manrope-p4;
+
+        color: $neutral-white;
+      }
+    }
+  }
+
+  .languageIcon {
+    @include fixed-size(28px, 28px);
+  }
+}
+
+@media only screen and (max-width: $breakpoint-lg) {
+  .wrapper {
+    .wave {
+      display: none;
+    }
+  }
+
+  .navbar {
+    @include flex(row);
+
+    align-items: center;
+    padding-block: 16px;
+    padding-inline: 16px;
+    background-color: $button-solid;
+
+    .navigations {
+      display: none;
+    }
+  }
+
+  .logo {
+    margin-left: 0;
+
+    @include fixed-size(64px, 64px);
+  }
+
+  .actions {
+    gap: 20px;
+
+    .auths {
+      .actionButton {
+        padding: 4px 8px;
+
+        .text {
+          @include manrope-caption;
+        }
+      }
+    }
+
+    .languageIcon {
+      @include fixed-size(24px, 24px);
+    }
+  }
+}

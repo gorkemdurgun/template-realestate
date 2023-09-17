@@ -1,0 +1,235 @@
+@import '@styles/main';
+
+/* web */
+
+.contactUsSection {
+  @include grid(2);
+
+  gap: 10px;
+
+  width: 100%;
+  margin-bottom: 100px;
+
+  background-color: opacity($color: $cracked-gray-100, $opacity: 0.5);
+  border-radius: 10px;
+}
+
+.formSide {
+  @include flex(column);
+
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 40px;
+
+  .formContainer {
+    @include flex(column);
+
+    gap: 20px;
+    width: 100%;
+
+    .formTitle {
+      @include manrope-p1;
+
+      color: $primary-blue;
+    }
+
+    .form {
+      @include flex(column);
+
+      gap: 10px;
+      width: 100%;
+    }
+
+    .formRow {
+      @include flex(row);
+
+      gap: 10px;
+      width: 100%;
+    }
+
+    .formItem {
+      @include flex(column);
+
+      gap: 2px;
+      width: 100%;
+
+      .formLabel {
+        @include manrope-p4;
+
+        color: $primary-blue-2;
+      }
+
+      .formInput {
+        height: 40px;
+        padding: 0 10px;
+        border: 1px solid $primary-blue-2;
+        border-radius: 2px;
+      }
+
+      .formTextArea {
+        resize: none;
+
+        height: 100px;
+        padding: 10px;
+
+        border: 1px solid $primary-blue-2;
+        border-radius: 2px;
+      }
+    }
+    
+    .formButton{
+      width: 100%;
+      background-color: $secondary-blue;
+      border-radius: 2px;
+
+      &:disabled{
+        background-color: $cracked-gray-200;
+      }
+
+      .text{
+        @include manrope-p3;
+
+        color: $neutral-white;
+      }
+    }
+  }
+
+  .socialMediaContainer {
+    @include flex(column);
+
+    gap: 10px;
+
+    .socialMediaTitle {
+      @include manrope-p1;
+
+      color: $primary-blue;
+    }
+
+    .socialMediaList {
+      @include flex(row);
+
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .socialMediaItem {
+        cursor: pointer;
+
+        gap: 4px;
+        align-items: center;
+        justify-content: flex-start;
+
+        width: fit-content;
+        padding: 5px 10px;
+
+        background-color: opacity($color: $cracked-gray-200, $opacity: 0.5);
+        border-radius: 50px;
+
+        @include flex(row);
+
+        .socialMediaIcon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @include fixed-size(32px, 32px);
+
+          background-color: opacity($color: $secondary-blue, $opacity: 0.2);
+          border-radius: 50%;
+
+          .icon {
+            @include fixed-size(20px, 20px);
+
+            color: $secondary-blue;
+          }
+        }
+
+        .socialMediaText {
+          @include manrope-p4;
+
+          color: $secondary-blue;
+        }
+      }
+    }
+  }
+}
+
+.mapSide {
+  @include flex(column);
+
+  padding: 20px 40px;
+}
+
+/* tablet & mobile */
+
+@media only screen and (max-width: $breakpoint-lg) {
+  .contactUsSection {
+    @include grid(1);
+
+    gap: 20px;
+  }
+
+  .formSide{
+    padding: 20px;
+
+    .formContainer{
+      .formTitle{
+        @include manrope-p3;
+        font-weight: 500;
+      }
+
+      .form{
+        .formRow{
+          @include flex(column);
+        }
+
+        .formItem{
+          gap: 10px;
+
+          .formInput{
+            height: 50px;
+
+            @include manrope-caption;
+          }
+
+          .formTextArea{
+            height: 150px;
+
+            @include manrope-caption;
+          }
+        }
+      }
+    }
+
+    .socialMediaContainer{
+      gap: 20px;
+
+      .socialMediaTitle{
+        @include manrope-p2;
+      }
+
+      .socialMediaList{
+        .socialMediaItem{
+
+          @include grid(2);
+
+          grid-template-columns: 1fr 4fr;
+          width: 100%;
+          
+          .socialMediaIcon{
+            @include fixed-size(40px, 40px);
+          }
+
+          .socialMediaText{
+            @include manrope-p4;
+          }
+        }
+      }
+    }
+  }
+
+  .mapSide{
+    padding: 0;
+  }
+}
+

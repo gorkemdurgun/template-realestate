@@ -1,0 +1,14 @@
+{
+  "Import SCSS Main File": {
+    "scope": "scss",
+    "prefix": "imps",
+    "body": ["@import '@styles/main';"],
+    "description": "import scss main file"
+  },
+  "Quick Include": {
+    "scope": "scss",
+    "prefix": "i",
+    "body": ["@include $1;"],
+    "description": "quick include"
+  }
+}

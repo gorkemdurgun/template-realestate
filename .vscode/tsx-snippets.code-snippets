@@ -1,0 +1,8 @@
+{
+  "Import Classes for Current File": {
+    "scope": "tsx",
+    "prefix": "imcls",
+    "body": ["import classes from './$index.module.scss';"],
+    "description": "import module classes for current file"
+  }
+}

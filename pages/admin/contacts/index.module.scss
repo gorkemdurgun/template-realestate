@@ -1,0 +1,194 @@
+@import '@styles/main';
+
+.adminContacts {
+  @include flex(column);
+
+  gap: 40px;
+
+  .tabs {
+    @include flex(row);
+
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+
+    .tab {
+      cursor: pointer;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 10px 20px;
+
+      background-color: $cracked-gray-200;
+      border: 1px solid $cracked-gray-300;
+      border-radius: 10px;
+
+      @include flex(row);
+    }
+  }
+
+  .section {
+    @include flex(column);
+
+    gap: 40px;
+    padding-bottom: 40px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $cracked-gray-400;
+    }
+
+    .title {
+      @include manrope-p1;
+
+      &:not(:first-child) {
+        margin-top: 40px;
+      }
+    }
+
+    .contactsList {
+      @include flex(column);
+
+      overflow: hidden;
+      gap: 20px;
+
+      .card {
+        @include flex(column);
+
+        overflow: hidden;
+        gap: 8px;
+        align-items: flex-start;
+
+        padding: 8px;
+
+        background-color: opacity($cracked-gray-200, 0.4);
+
+        .cardRow {
+          @include flex(row);
+
+          overflow: hidden;
+          gap: 10px;
+          align-items: center;
+          width: 100%;
+        }
+
+        .item {
+          position: relative;
+
+          overflow: hidden;
+
+          @include flex(row);
+
+          gap: 5px;
+          align-items: center;
+          justify-content: flex-start;
+
+          width: 600px;
+          padding: 4px 8px;
+
+          background-color: opacity($cracked-gray-100, 0.8);
+          border-radius: 10px;
+
+          &[aria-label='message'] {
+            @include flex(column);
+
+            align-items: flex-start;
+            min-height: 100px;
+          }
+
+          .icon {
+            @include fixed-size(20px, 20px);
+
+            padding: 6px;
+            color: $primary-blue;
+            border-radius: 50%;
+          }
+
+          .text {
+            @include manrope-p4;
+
+            max-width: 50%;
+            color: $primary-blue;
+          }
+
+          .copyIcon {
+            cursor: pointer;
+
+            @include fixed-size(12px, 12px);
+
+            position: absolute;
+            right: 10px;
+
+            padding: 4px;
+
+            color: $cracked-gray-300;
+
+            background-color: $cracked-gray-200;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+
+    .actions {
+      @include flex(row);
+
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+
+      .archiveButton {
+        @include flex(row);
+
+        gap: 10px;
+        align-items: center;
+        justify-content: flex-start;
+
+        padding: 6px 10px;
+
+        background-color: $cracked-gray-200;
+        border: 1px solid $cracked-gray-300;
+        border-radius: 10px;
+
+        .icon {
+          @include fixed-size(16px, 16px);
+
+          color: $button-shiny;
+        }
+
+        .text {
+          @include manrope-caption;
+
+          color: $button-shiny;
+        }
+      }
+
+      .deleteButton {
+        @include flex(row);
+
+        gap: 10px;
+        align-items: center;
+        justify-content: flex-start;
+
+        padding: 6px 10px;
+
+        background-color: $cracked-gray-200;
+        border: 1px solid $cracked-gray-300;
+        border-radius: 10px;
+
+        .icon {
+          @include fixed-size(16px, 16px);
+
+          color: $cracked-gray-700;
+        }
+
+        .text {
+          @include manrope-caption;
+
+          color: $cracked-gray-700;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "npm run lint:style && npm run format:code",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "lint:style": "stylelint '**/*.scss'",
+    "format:code": "prettier --write '**/*.{js,jsx,json,css,scss}'"
+  },
+  "dependencies": {
+    "@firebase/firestore": "4.1.0",
+    "date-fns": "2.29.3",
+    "firebase": "10.1.0",
+    "gray-matter": "4.0.3",
+    "i18next": "^23.5.1",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "i18next-http-backend": "^2.2.2",
+    "next": "latest",
+    "normalize.css": "8.0.1",
+    "react": "18.2.0",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "18.2.0",
+    "react-i18next": "^13.2.2",
+    "react-icons": "4.10.1",
+    "remark": "14.0.2",
+    "remark-html": "15.0.1",
+    "sass": "1.64.1",
+    "swr": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.4.5",
+    "@types/react": "18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.0",
+    "i": "^0.3.7",
+    "npm": "^9.8.1",
+    "prettier": "3.0.0",
+    "stylelint": "14.16.1",
+    "stylelint-config-clean-order": "5.0.0",
+    "stylelint-config-prettier": "9.0.5",
+    "stylelint-config-standard": "24.0.0",
+    "stylelint-csstree-validator": "2.1.0",
+    "stylelint-order": "6.0.2",
+    "stylelint-scss": "4.5.0"
+  }
+}

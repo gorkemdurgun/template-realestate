@@ -1,0 +1,28 @@
+@import '@styles/main';
+
+/* web */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: $neutral-white;
+}
+
+.content {
+  @include flex(column);
+
+  gap: 140px;
+  align-items: center;
+  padding-top: 60px;
+  padding-inline: 100px;
+}
+
+/* tablet & mobile */
+
+@media only screen and (max-width: $breakpoint-lg) {
+  .content {
+    gap: 60px;
+    padding-top: 10px;
+    padding-inline: 16px;
+  }
+}
