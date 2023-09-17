@@ -8,13 +8,7 @@
   grid-template-columns: 1fr 2fr;
   width: 100%;
   padding-block: 40px;
-  background: linear-gradient(
-    60deg,
-    $button-solid 0%,
-    darken($button-solid, 3%) 20%,
-    darken($button-solid, 5%) 40%,
-    $button-solid 100%
-  );
+  background: $trust-blue-800;
   
 
   .section {

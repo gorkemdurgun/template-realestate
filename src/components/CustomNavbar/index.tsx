@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import classes from './index.module.scss';
 import Image from 'next/image';
-import {PiPawPrintDuotone} from 'react-icons/pi';
+import {PiCursorClickDuotone} from 'react-icons/pi';
 
 import {CustomButton, CustomDropdown, CustomImageBox, CustomText} from '@components';
 
@@ -12,22 +12,18 @@ import {useTranslation} from 'react-i18next';
 
 const navs = [
   {
-    section: 'lansman',
-    name: 'Lansman',
+    name: 'Anasayfa',
     link: '/',
   },
   {
-    section: 'catalog',
-    name: 'Katalog',
-    link: '/catalog-detail',
+    name: 'Kiralık Evler',
+    link: '/rents',
   },
   {
-    section: 'about',
-    name: 'Hakkımızda',
-    link: '/about',
+    name: 'Satılık Evler',
+    link: '/sales',
   },
   {
-    section: 'contact',
     name: 'İletişim',
     link: '/contact',
   },
@@ -57,6 +53,7 @@ const CustomNavbar: React.FC<Props> = props => {
   const {i18n} = useTranslation();
   const router = useRouter();
   const {pathname} = router;
+  const currentPath = pathname === '/' ? '/' : pathname.split('/')[1];
 
   const [activeLanguage, setActiveLanguage] = useState('tr');
 
@@ -72,20 +69,12 @@ const CustomNavbar: React.FC<Props> = props => {
         return SVG.LangTR;
     }
   }
-  function scrollToSection(id: string) {
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({top: element.offsetTop - 130, behavior: 'smooth'});
-    }
-  }
-  function onNavClick(id: string) {
-    if (pathname === '/') {
-      scrollToSection(id);
+
+  function onNavClick(link: string) {
+    if (link === '/') {
+      window.scrollTo({top: 0, behavior: 'smooth'});
     } else {
-      router.push('/');
-      setTimeout(() => {
-        scrollToSection(id);
-      }, 666);
+      router.push(link);
     }
   }
 
@@ -101,24 +90,24 @@ const CustomNavbar: React.FC<Props> = props => {
       <div className={classes.navigations}>
         <div className={classes.indicator} />
         {navs.map((nav, index) => (
-          <CustomButton key={index} className={classes.navButton} onClick={() => onNavClick(nav.section)}>
+          <CustomButton key={index} className={classes.navButton} onClick={() => onNavClick(nav.link)}>
             <CustomText
-              className={activeSection === nav.section ? classes.activeText : classes.inactiveText}
+              className={currentPath === nav.link ? classes.activeText : classes.inactiveText}
               text={nav.name}
             />
-            <PiPawPrintDuotone className={activeSection === nav.section ? classes.activeIcon : classes.inactiveIcon} />
+            <PiCursorClickDuotone className={currentPath === nav.link ? classes.activeIcon : classes.inactiveIcon} />
           </CustomButton>
         ))}
       </div>
       <div className={classes.actions}>
-        <div className={classes.auths}>
+        {/* <div className={classes.auths}>
           <CustomButton className={classes.actionButton} onClick={() => router.push('/login')}>
             <CustomText className={classes.text} text="Giriş Yap" />
           </CustomButton>
           <CustomButton className={classes.actionButton} onClick={() => router.push('/register')}>
             <CustomText className={classes.text} text="Kayıt Ol" />
           </CustomButton>
-        </div>
+        </div> */}
         <CustomDropdown
           options={languages.map(item => item.value)}
           activeOption={activeLanguage}

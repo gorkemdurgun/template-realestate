@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
 import classes from './index.module.scss';
-import {CustomButton, CustomImageBox, CustomText} from '../../basis-app';
-import {TEMP} from '../../../assets/images';
+import {CustomButton, CustomImageBox, CustomText} from '../Generics';
+import {TEMP} from '../../assets/images';
 import {Category, ProductType} from '@types';
 import {
   LuCat as CatIcon,

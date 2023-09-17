@@ -14,7 +14,9 @@
   
   padding-inline: 2rem;
 
-  background-color: $button-solid;
+  background-color: $trust-blue-500;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .logo {
@@ -31,6 +33,9 @@
   gap: 20px;
   align-items: center;
   justify-content: flex-end;
+
+  background-color: $trust-blue-800;
+  border-radius: 10px;
 
   .navButton {
     cursor: pointer;
@@ -58,29 +63,29 @@
     }
 
     .activeText {
-      @include manrope-p2;
-
       color: $neutral-white;
+      white-space: nowrap;
       transition: all 0.2s ease-in-out;
+
+      @include manrope-p2;
     }
 
     .inactiveText {
-      @include manrope-p3;
-
       color: $cracked-gray-100;
+      white-space: nowrap;
       transition: all 0.2s ease-in-out;
+
+      @include manrope-p3;
     }
 
     .activeIcon {
       position: absolute;
-      transform: rotate(330deg);
 
-      margin-bottom: -85px;
+      margin-bottom: -65px;
       padding: 4px;
 
       color: $neutral-white;
 
-      background-color: $action-orange;
       border-radius: 50%;
 
       transition:
