@@ -1,32 +1,5 @@
 @import '@styles/main';
 
-.wrapper {
-  position: sticky;
-  z-index: 100;
-  top: 0;
-  width: 100%;
-}
-
-.wave {
-  pointer-events: none;
-
-  position: absolute !important;
-  top: 0;
-
-  aspect-ratio: 6/1;
-  width: 100%;
-  min-height: 130px;
-
-  > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    min-height: 360px;
-
-    object-fit: cover;
-  }
-}
 
 .navbar {
   @include grid(3);
@@ -40,6 +13,8 @@
 
   
   padding-inline: 2rem;
+
+  background-color: $button-solid;
 }
 
 .logo {
@@ -47,7 +22,7 @@
   user-select: none;
   margin-left: 20px;
 
-  @include fixed-size(160px, 160px);
+  @include fixed-size(120px, 120px);
 }
 
 .navigations {
@@ -162,12 +137,6 @@
 }
 
 @media only screen and (max-width: $breakpoint-lg) {
-  .wrapper {
-    .wave {
-      display: none;
-    }
-  }
-
   .navbar {
     @include flex(row);
 

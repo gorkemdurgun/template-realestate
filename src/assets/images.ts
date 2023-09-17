@@ -1,4 +1,5 @@
 /* svg */
+import LogoNXT from './images/svgs/logo-nxt.svg';
 import LogoPetneedings from './images/svgs/logo-petneedings.svg';
 import Wave from './images/svgs/wave.svg';
 import IconCat from './images/svgs/icon-cat.svg';
@@ -43,6 +44,7 @@ import TempProd1 from './images/temporary/prod-1.png';
 import TempProd2 from './images/temporary/prod-2.png';
 
 export const SVG = {
+  LogoNXT,
   LogoPetneedings,
   Wave,
   IconCat,

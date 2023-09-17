@@ -10,3 +10,7 @@ export * from '../layouts';
 // paths
 
 export * from './Breadcrumb';
+
+// new imports
+
+export * from './CustomNavbar';

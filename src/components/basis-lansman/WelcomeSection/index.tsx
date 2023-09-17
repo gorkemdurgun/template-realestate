@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {CustomButton, CustomImageBox, CustomText} from '@components';
 
 import classes from './index.module.scss';
 import {PNG, SVG} from '@assets';
+import {checkFirebaseConnection} from '@services';
 
 type Props = {
   id: string;
@@ -19,6 +20,14 @@ const WelcomeSection = (props: Props) => {
     }
   }
 
+  const [firebaseConnection, setFirebaseConnection] = useState(false);
+
+  useEffect(() => {
+    checkFirebaseConnection().then(res => {
+      setFirebaseConnection(res.connection);
+    });
+  }, []);
+
   return (
     <div id={id} className={classes.welcome}>
       <div className={classes.leftSide}>
@@ -28,7 +37,7 @@ const WelcomeSection = (props: Props) => {
         <CustomImageBox className={classes.iconBox} alt="Star Icon" src={SVG.IconStar1} />
         <span className={classes.title}>
           <span className={classes.brand}>
-            <CustomText className={classes.brandText} text="PETNEEDINGS" />
+            <CustomText className={classes.brandText} text={`Firebase: ${firebaseConnection}`} />
           </span>
           <div className={classes.flash} />
           <CustomText className={classes.text} text="Sevdiğin için en iyisini" />
@@ -37,7 +46,7 @@ const WelcomeSection = (props: Props) => {
         <span className={classes.subtitle}>
           <CustomText
             className={classes.text}
-            text="BoilerPlate ile evcil hayvanını özel ve güvende hissettir. Yaptığımız her şey onlar daha mutlu olsun diye."
+            text="Real Estate ile evcil hayvanını özel ve güvende hissettir. Yaptığımız her şey onlar daha mutlu olsun diye."
           />
         </span>
         <div className={classes.actions}>

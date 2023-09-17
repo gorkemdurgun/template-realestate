@@ -8,14 +8,14 @@ import {getFirestore} from '@firebase/firestore';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyA3jaj-Q9rE2r2l6wkyA77Cp79PyPajmO4',
-  authDomain: 'petneedings.firebaseapp.com',
-  databaseURL: 'https://petneedings-default-rtdb.europe-west1.firebasedatabase.app',
-  projectId: 'petneedings',
-  storageBucket: 'petneedings.appspot.com',
-  messagingSenderId: '431459404636',
-  appId: '1:431459404636:web:4f6efb8c9748fbad318f99',
-  measurementId: 'G-20VW2K11EM',
+  apiKey: 'AIzaSyBM83KB09XIbGINmeRACIGQ6jkyd1vWlGw',
+  authDomain: 'template-realestate.firebaseapp.com',
+  // databaseURL: 'https://petneedings-default-rtdb.europe-west1.firebasedatabase.app',
+  projectId: 'template-realestate',
+  storageBucket: 'template-realestate.appspot.com',
+  messagingSenderId: '352386474577',
+  appId: '1:352386474577:web:461679eec8fed3c5640e70',
+  measurementId: 'G-T24Q8K99Z9',
 };
 
 // Initialize Firebase

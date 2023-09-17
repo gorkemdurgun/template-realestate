@@ -30,15 +30,15 @@ export const Footer = () => {
           <div className={classes.list}>
             <div className={classes.social}>
               <PiTiktokLogo className={classes.icon} color="#fff" />
-              <CustomText className={classes.text} text="@BoilerPlate" />
+              <CustomText className={classes.text} text="@Real Estate" />
             </div>
             <div className={classes.social}>
               <PiInstagramLogo className={classes.icon} color="#fff" />
-              <CustomText className={classes.text} text="@BoilerPlate" />
+              <CustomText className={classes.text} text="@Real Estate" />
             </div>
             <div className={classes.social}>
               <PiEnvelope className={classes.icon} color="#fff" />
-              <CustomText className={classes.text} text="BoilerPlate@gmail.com" />
+              <CustomText className={classes.text} text="Real Estate@gmail.com" />
             </div>
           </div>
         </section>

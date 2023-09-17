@@ -94,42 +94,37 @@ const CustomNavbar: React.FC<Props> = props => {
   }, [activeLanguage]);
 
   return (
-    <div className={classes.wrapper}>
-      <CustomImageBox className={classes.wave} alt="wave" src={SVG.Wave} />
-      <div className={classes.navbar}>
-        <a href="/">
-          <CustomImageBox priority className={classes.logo} alt="logo" src={SVG.LogoPetneedings} />
-        </a>
-        <div className={classes.navigations}>
-          <div className={classes.indicator} />
-          {navs.map((nav, index) => (
-            <CustomButton key={index} className={classes.navButton} onClick={() => onNavClick(nav.section)}>
-              <CustomText
-                className={activeSection === nav.section ? classes.activeText : classes.inactiveText}
-                text={nav.name}
-              />
-              <PiPawPrintDuotone
-                className={activeSection === nav.section ? classes.activeIcon : classes.inactiveIcon}
-              />
-            </CustomButton>
-          ))}
+    <div className={classes.navbar}>
+      <a href="/">
+        <CustomImageBox priority className={classes.logo} alt="logo" src={SVG.LogoNXT} />
+      </a>
+      <div className={classes.navigations}>
+        <div className={classes.indicator} />
+        {navs.map((nav, index) => (
+          <CustomButton key={index} className={classes.navButton} onClick={() => onNavClick(nav.section)}>
+            <CustomText
+              className={activeSection === nav.section ? classes.activeText : classes.inactiveText}
+              text={nav.name}
+            />
+            <PiPawPrintDuotone className={activeSection === nav.section ? classes.activeIcon : classes.inactiveIcon} />
+          </CustomButton>
+        ))}
+      </div>
+      <div className={classes.actions}>
+        <div className={classes.auths}>
+          <CustomButton className={classes.actionButton} onClick={() => router.push('/login')}>
+            <CustomText className={classes.text} text="Giriş Yap" />
+          </CustomButton>
+          <CustomButton className={classes.actionButton} onClick={() => router.push('/register')}>
+            <CustomText className={classes.text} text="Kayıt Ol" />
+          </CustomButton>
         </div>
-        <div className={classes.actions}>
-          <div className={classes.auths}>
-            <CustomButton className={classes.actionButton} onClick={() => router.push('/login')}>
-              <CustomText className={classes.text} text="Giriş Yap" />
-            </CustomButton>
-            <CustomButton className={classes.actionButton} onClick={() => router.push('/register')}>
-              <CustomText className={classes.text} text="Kayıt Ol" />
-            </CustomButton>
-          </div>
-          <CustomDropdown
-            options={languages.map(item => item.value)}
-            activeOption={activeLanguage}
-            onChange={option => setActiveLanguage(option)}>
-            <Image className={classes.languageIcon} src={languageToIcon(activeLanguage)} alt="language" />
-          </CustomDropdown>
-        </div>
+        <CustomDropdown
+          options={languages.map(item => item.value)}
+          activeOption={activeLanguage}
+          onChange={option => setActiveLanguage(option)}>
+          <Image className={classes.languageIcon} src={languageToIcon(activeLanguage)} alt="language" />
+        </CustomDropdown>
       </div>
     </div>
   );
