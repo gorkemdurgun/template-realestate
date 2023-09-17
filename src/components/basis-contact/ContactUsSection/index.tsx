@@ -153,7 +153,7 @@ const ContactUsSection: React.FC<Props> = props => {
               <div className={classes.socialMediaIcon}>
                 <PiInstagramLogo className={classes.icon} />
               </div>
-              <CustomText className={classes.socialMediaText} text="@petneedings" />
+              <CustomText className={classes.socialMediaText} text="@BoilerPlate" />
             </div>
             <div className={classes.socialMediaItem}>
               <div className={classes.socialMediaIcon}>

@@ -20,7 +20,7 @@ type Props = {
 };
 
 const descriptions = [
-  `Merhaba, biz Petneedings ailisiyiz. Evcil hayvanlarınızın ihtiyaçlarını sağlamak için kurulduk. Evcil hayvanlarınızın ihtiyaçlarına yönelik ürünler üretiyoruz. Ürünlerimizi üretirken evcil hayvanlarınızın sağlığını ve konforunu göz önünde bulunduruyoruz.`,
+  `Merhaba, biz BoilerPlate ailesiyiz. Evcil hayvanlarınızın ihtiyaçlarını sağlamak için kurulduk. Evcil hayvanlarınızın ihtiyaçlarına yönelik ürünler üretiyoruz. Ürünlerimizi üretirken evcil hayvanlarınızın sağlığını ve konforunu göz önünde bulunduruyoruz.`,
   `Ürünlerimizin kalitesi ve güvenilirliği konusunda asla taviz vermiyoruz. Malzemelerimiz en kaliteli hammaddelerden üretiyoruz.`,
   `Şirket politikamız gereği müşterilerimizin memnuniyeti bizim için her şeyden önemli. Müşterilerimize en iyi hizmeti sunmak için çalışıyoruz. Bu yüzden müşteri hizmetlerimiz ile mesai saatleri içerisinde Türkçe ve İngilizce olarak hizmetinizdeyiz.`,
   `İmalatını gerçekleştirdiğimiz ürünleri sizlere en uygun fiyatlarla sunuyoruz. Fiyat/Performans optimizasyonu ile ürünlerimizi geliştiriyoruz.`,

@@ -37,7 +37,7 @@ const WelcomeSection = (props: Props) => {
         <span className={classes.subtitle}>
           <CustomText
             className={classes.text}
-            text="Petneedings ile evcil hayvanını özel ve güvende hissettir. Yaptığımız her şey onlar daha mutlu olsun diye."
+            text="BoilerPlate ile evcil hayvanını özel ve güvende hissettir. Yaptığımız her şey onlar daha mutlu olsun diye."
           />
         </span>
         <div className={classes.actions}>
