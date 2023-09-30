@@ -24,7 +24,7 @@
     justify-content: space-between;
 
     .text {
-      @include manrope-h3;
+      @include gantari-h3;
 
       color: $primary-blue;
     }
@@ -67,7 +67,7 @@
         }
 
         .matterTitle {
-          @include manrope-p3;
+          @include gantari-p3;
 
           color: $action-orange;
         }
@@ -76,7 +76,7 @@
       .matterDescription {
         max-width: 580px;
 
-        @include manrope-p4;
+        @include gantari-p4;
 
         color: $cracked-gray-500;
       }
@@ -99,7 +99,7 @@
     justify-content: space-between;
 
     .text {
-      @include manrope-h3;
+      @include gantari-h3;
 
       color: $primary-blue;
     }
@@ -118,7 +118,7 @@
       text-align: justify;
 
       .text {
-        @include manrope-p4;
+        @include gantari-p4;
 
         color: $cracked-gray-500;
       }
@@ -144,7 +144,7 @@
         border-bottom: 1px solid $primary-blue;
 
         .text {
-          @include manrope-p3;
+          @include gantari-p3;
         }
       }
 
@@ -172,12 +172,12 @@
             }
 
             .matterTitle {
-              @include manrope-p4;
+              @include gantari-p4;
             }
           }
 
           .matterDescription {
-            @include manrope-caption;
+            @include gantari-caption;
           }
         }
       }
@@ -191,7 +191,7 @@
         border-bottom: 1px solid $primary-blue;
 
         .text {
-          @include manrope-p3;
+          @include gantari-p3;
         }
       }
 
@@ -200,7 +200,7 @@
 
         .descriptionBox {
           .text {
-            @include manrope-caption;
+            @include gantari-caption;
           }
         }
 

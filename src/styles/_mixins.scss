@@ -36,131 +36,69 @@
 
 /* Quick Font Import */
 
-/* Manrope */
-@mixin font-manrope {
-  font-family: Manrope, sans-serif;
+/* Gantari */
+@mixin font-gantari {
+  font-family: Gantari, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
-@mixin manrope-h1 {
-  @include font-manrope;
+@mixin gantari-h1 {
+  @include font-gantari;
 
   font-size: 3.5rem;
 }
 
-@mixin manrope-h2 {
-  @include font-manrope;
+@mixin gantari-h2 {
+  @include font-gantari;
 
   font-size: 3rem;
 }
 
-@mixin manrope-h3 {
-  @include font-manrope;
+@mixin gantari-h3 {
+  @include font-gantari;
 
   font-size: 2.5rem;
 }
 
-@mixin manrope-h4 {
-  @include font-manrope;
+@mixin gantari-h4 {
+  @include font-gantari;
 
   font-size: 2rem;
 }
 
-@mixin manrope-p1 {
-  @include font-manrope;
+@mixin gantari-p1 {
+  @include font-gantari;
 
   font-size: 1.8rem;
 }
 
-@mixin manrope-p2 {
-  @include font-manrope;
+@mixin gantari-p2 {
+  @include font-gantari;
 
   font-size: 1.5rem;
 }
 
-@mixin manrope-p3 {
-  @include font-manrope;
+@mixin gantari-p3 {
+  @include font-gantari;
 
   font-size: 1.2rem;
 }
 
-@mixin manrope-p4 {
-  @include font-manrope;
+@mixin gantari-p4 {
+  @include font-gantari;
 
   font-size: 1rem;
 }
 
-@mixin manrope-caption {
-  @include font-manrope;
+@mixin gantari-caption {
+  @include font-gantari;
 
   font-size: 0.8rem;
 }
 
-@mixin manrope-caption2 {
-  @include font-manrope;
+@mixin gantari-caption2 {
+  @include font-gantari;
 
   font-size: 0.6rem;
-}
-
-
-/* DynaPuff */
-@mixin font-dynapuff {
-  font-family: DynaPuff, sans-serif;
-  font-weight: normal;
-  font-style: normal;
-}
-
-@mixin dynapuff-h1 {
-  @include font-dynapuff;
-
-  font-size: 3.5rem;
-}
-
-@mixin dynapuff-h2 {
-  @include font-dynapuff;
-
-  font-size: 3rem;
-}
-
-@mixin dynapuff-h3 {
-  @include font-dynapuff;
-
-  font-size: 2.5rem;
-}
-
-@mixin dynapuff-h4 {
-  @include font-dynapuff;
-
-  font-size: 2rem;
-}
-
-@mixin dynapuff-p1 {
-  @include font-dynapuff;
-
-  font-size: 1.8rem;
-}
-
-@mixin dynapuff-p2 {
-  @include font-dynapuff;
-
-  font-size: 1.5rem;
-}
-
-@mixin dynapuff-p3 {
-  @include font-dynapuff;
-
-  font-size: 1.2rem;
-}
-
-@mixin dynapuff-p4 {
-  @include font-dynapuff;
-
-  font-size: 1rem;
-}
-
-@mixin dynapuff-caption {
-  @include font-dynapuff;
-
-  font-size: 0.5rem;
 }

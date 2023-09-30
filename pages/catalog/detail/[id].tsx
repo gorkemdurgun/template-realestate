@@ -3,7 +3,8 @@ import {ProductSize, ProductType} from '@types';
 import {getProductById} from '@services';
 
 import classes from './index.module.scss';
-import {MainContainer, CustomButton, CustomImageBox, CustomNavbar, CustomText} from '@components';
+import {CustomButton, CustomImageBox, ESTNavbar, CustomText} from '@components';
+import {MainContainer} from '@layouts';
 import {useRouter} from 'next/router';
 import {LuChevronLeft as LeftArrow, LuChevronRight as RightArrow, LuClock as Clock} from 'react-icons/lu';
 import {IoMdStar as Star, IoMdStarHalf as HalfStar, IoMdStarOutline as EmptyStar} from 'react-icons/io';

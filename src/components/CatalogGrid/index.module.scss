@@ -16,7 +16,7 @@
   justify-content: space-between;
 
   .text {
-    @include manrope-h3;
+    @include gantari-h3;
 
     color: $primary-blue;
   }
@@ -31,7 +31,7 @@
     }
 
     .text {
-      @include manrope-p3;
+      @include gantari-p3;
 
       color: $cracked-gray-400;
       transition: color 0.3s ease-in-out;
@@ -80,7 +80,7 @@
         padding-inline: 20px;
 
         .title {
-          @include manrope-p3;
+          @include gantari-p3;
         }
 
         .brief {
@@ -88,13 +88,13 @@
           margin-bottom: 20px;
           color: $cracked-gray-700;
 
-          @include manrope-p4;
+          @include gantari-p4;
 
           transition: color 0.2s ease-in-out;
         }
 
         .price {
-          @include manrope-p3;
+          @include gantari-p3;
         }
       }
 
@@ -167,7 +167,7 @@
             }
 
             .size {
-              @include manrope-p4;
+              @include gantari-p4;
 
               color: $neutral-black;
             }
@@ -337,13 +337,13 @@
     border-bottom: 1px solid $primary-blue;
 
     .text {
-      @include manrope-p3;
+      @include gantari-p3;
     }
   
 
     .seeAllButton {
       .text {
-        @include manrope-caption;
+        @include gantari-caption;
       }
     }
   }
@@ -383,12 +383,12 @@
             border-bottom: none;
 
            .text{
-              @include manrope-h4;
+              @include gantari-h4;
            }
 
            .seeAllButton {
               .text {
-                @include manrope-caption;
+                @include gantari-caption;
               }
            }
           }
@@ -396,11 +396,11 @@
           .brief {
             max-width: 70%;
 
-            @include manrope-caption;
+            @include gantari-caption;
           }
 
           .price {
-            @include manrope-p4;
+            @include gantari-p4;
           }
         }
       }
@@ -454,7 +454,7 @@
         border-radius: 4px;
 
         .text{
-          @include manrope-p3;
+          @include gantari-p3;
 
           color: $neutral-white;
         }

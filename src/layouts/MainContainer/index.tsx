@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from './index.module.scss';
-import {CustomNavbar, Breadcrumb, Footer} from '@components';
+import {ESTNavbar, Breadcrumb, Footer} from '@components';
 
 type Props = {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ const MainContainer = (props: Props) => {
 
   return (
     <div className={classes.mainContainer}>
-      <CustomNavbar activeSection={activeSection} />
+      <ESTNavbar activeSection={activeSection} />
       <div className={classes.mainContent}>
         {/* <Breadcrumb /> */}
         {children}

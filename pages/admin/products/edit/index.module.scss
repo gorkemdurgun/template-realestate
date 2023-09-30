@@ -40,7 +40,7 @@
         }
 
         .text {
-          @include manrope-p4;
+          @include gantari-p4;
 
           color: $neutral-white;
         }
@@ -87,7 +87,7 @@
       }
 
       .text {
-        @include manrope-p4;
+        @include gantari-p4;
 
         color: $neutral-white;
         transition: scale 0.2s ease-in-out;
@@ -102,13 +102,13 @@
   gap: 4px;
 
   .label {
-    @include manrope-p4;
+    @include gantari-p4;
 
     color: $cracked-gray-700;
   }
 
   .input {
-    @include manrope-p4;
+    @include gantari-p4;
 
     padding: 8px 12px;
 
@@ -135,13 +135,13 @@
     gap: 4px;
 
     .label {
-      @include manrope-p4;
+      @include gantari-p4;
 
       color: $cracked-gray-700;
     }
 
     .input {
-      @include manrope-p4;
+      @include gantari-p4;
 
       padding: 8px 12px;
 
@@ -163,13 +163,13 @@
     gap: 4px;
 
     .label {
-      @include manrope-p4;
+      @include gantari-p4;
 
       color: $cracked-gray-700;
     }
 
     .input {
-      @include manrope-p4;
+      @include gantari-p4;
 
       padding: 8px 12px;
 
@@ -192,7 +192,7 @@
   gap: 4px;
 
   .label {
-    @include manrope-p4;
+    @include gantari-p4;
 
     color: $cracked-gray-700;
   }
@@ -219,7 +219,7 @@
       }
 
       .text {
-        @include manrope-p4;
+        @include gantari-p4;
 
         color: $cracked-gray-700;
       }
@@ -233,7 +233,7 @@
   gap: 4px;
 
   .label {
-    @include manrope-p4;
+    @include gantari-p4;
 
     color: $cracked-gray-700;
   }
@@ -260,7 +260,7 @@
       }
 
       .text {
-        @include manrope-p4;
+        @include gantari-p4;
 
         color: $cracked-gray-700;
       }
@@ -274,7 +274,7 @@
   gap: 12px;
 
   .title {
-    @include manrope-h4;
+    @include gantari-h4;
 
     color: $neutral-black;
   }
@@ -285,13 +285,13 @@
     gap: 4px;
 
     .label {
-      @include manrope-p4;
+      @include gantari-p4;
 
       color: $cracked-gray-700;
     }
 
     .input {
-      @include manrope-p4;
+      @include gantari-p4;
 
       padding: 8px 12px;
 
@@ -313,7 +313,7 @@
     gap: 4px;
 
     .label {
-      @include manrope-p4;
+      @include gantari-p4;
 
       color: $cracked-gray-700;
     }
@@ -342,7 +342,7 @@
         }
 
         .text {
-          @include manrope-caption;
+          @include gantari-caption;
 
           color: $cracked-gray-700;
         }
@@ -363,7 +363,7 @@
     gap: 4px;
 
     .label {
-      @include manrope-p4;
+      @include gantari-p4;
 
       color: $cracked-gray-700;
     }
@@ -395,7 +395,7 @@
           }
 
           .text {
-            @include manrope-p4;
+            @include gantari-p4;
 
             color: $cracked-gray-700;
           }
@@ -419,13 +419,13 @@
        
 
             .label {
-              @include manrope-p4;
+              @include gantari-p4;
 
               color: $cracked-gray-700;
             }
 
             .input {
-              @include manrope-p4;
+              @include gantari-p4;
 
               padding: 8px 12px;
 

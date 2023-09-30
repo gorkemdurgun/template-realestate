@@ -55,7 +55,7 @@
     padding: 4px 10px;
 
     .text {
-      @include manrope-p4;
+      @include gantari-p4;
 
       color: $cracked-gray-500;
     }
@@ -71,7 +71,7 @@
 
     .dropdownOption{
       .text{
-        @include manrope-caption;
+        @include gantari-caption;
       }
     }
   }

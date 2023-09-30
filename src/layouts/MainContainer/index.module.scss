@@ -4,29 +4,23 @@
 
 .mainContainer {
   @include flex(column);
-
-align-items: center;
-  width: 100%;
 }
 
-.mainContent{
+.mainContent {
   @include flex(column);
 
   gap: 80px;
-
-  max-width: 1420px;
   min-height: 100vh;
   padding-block: 60px 40px;
-  padding-inline: 80px;
+  padding-inline: 100px;
 }
 
 /* mobile */
 
 @media only screen and (max-width: $breakpoint-lg) {
- .mainContent{
-  gap: 40px;
+  .mainContent {
+    gap: 40px;
     padding-block: 40px 80px;
     padding-inline: 20px;
- }
+  }
 }
-

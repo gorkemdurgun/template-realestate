@@ -20,6 +20,9 @@ import LangEN from './images/svgs/lang_english.svg';
 import LangTR from './images/svgs/lang_turkish.svg';
 import LangAR from './images/svgs/lang_arabic.svg';
 
+/* new SVGS */
+import LaunchCircle from './images/svgs/launch-circle.svg';
+
 /* jpg */
 import PNLogo from './images/jpgs/pn-logo.png';
 import Pets1 from './images/jpgs/pets-1.jpg';
@@ -38,6 +41,7 @@ import BannerCat2 from './images/pngs/banner-cat-2.png';
 import BannerCat3 from './images/pngs/banner-cat-3.png';
 import BannerDog from './images/pngs/banner-dog.png';
 import BannerDog2 from './images/pngs/banner-dog-2.png';
+import EstateLogo from './images/pngs/estate-logo.png';
 
 /* temporary */
 import TempProd1 from './images/temporary/prod-1.png';
@@ -64,6 +68,7 @@ export const SVG = {
   LangEN,
   LangTR,
   LangAR,
+  LaunchCircle,
 };
 
 export const JPG = {
@@ -85,6 +90,7 @@ export const PNG = {
   BannerCat3,
   BannerDog,
   BannerDog2,
+  EstateLogo,
 };
 
 export const TEMP = {

@@ -75,7 +75,7 @@
         border-radius: 10px;
 
         .counterText {
-          @include manrope-p4;
+          @include gantari-p4;
 
           color: $cracked-gray-600;
         }
@@ -139,7 +139,7 @@
         .text {
           cursor: default;
 
-          @include manrope-caption;
+          @include gantari-caption;
 
           color: $cracked-gray-500;
         }
@@ -153,7 +153,7 @@
       align-items: center;
 
       .title {
-        @include manrope-h2;
+        @include gantari-h2;
 
         color: $neutral-black;
       }
@@ -195,7 +195,7 @@
       .reviewScore {
         display: inline-block;
 
-        @include manrope-p4;
+        @include gantari-p4;
 
         color: $cracked-gray-500;
 
@@ -209,7 +209,7 @@
         display: inline-block;
         margin-left: 10px;
 
-        @include manrope-caption;
+        @include gantari-caption;
 
         color: $cracked-gray-500;
       }
@@ -242,14 +242,14 @@
         }
 
         .text {
-          @include manrope-p4;
+          @include gantari-p4;
 
           color: $neutral-white;
         }
       }
 
       .oldPrice {
-        @include manrope-p3;
+        @include gantari-p3;
 
         color: $cracked-gray-500;
         text-decoration: line-through;
@@ -258,7 +258,7 @@
       .newPrice {
         margin-left: 10px;
 
-        @include manrope-h4;
+        @include gantari-h4;
 
         color: $neutral-black;
       }
@@ -272,7 +272,7 @@
       border-bottom: 1px solid $cracked-gray-100;
 
       .sizeTitle {
-        @include manrope-p4;
+        @include gantari-p4;
 
         color: $cracked-gray-800;
       }
@@ -314,7 +314,7 @@
           }
 
           .text {
-            @include manrope-p4;
+            @include gantari-p4;
 
             color: $cracked-gray-500;
           }
@@ -328,13 +328,13 @@
         align-items: flex-end;
 
         .name {
-          @include manrope-caption;
+          @include gantari-caption;
 
           color: $cracked-gray-500;
         }
 
         .dimension {
-          @include manrope-caption;
+          @include gantari-caption;
 
           color: $cracked-gray-500;
         }
@@ -347,7 +347,7 @@
       gap: 20px;
 
       .colorTitle {
-        @include manrope-p4;
+        @include gantari-p4;
 
         color: $cracked-gray-800;
       }
@@ -384,13 +384,13 @@
       gap: 20px;
 
       .descriptionTitle {
-        @include manrope-p4;
+        @include gantari-p4;
 
         color: $cracked-gray-800;
       }
 
       .descriptionText {
-        @include manrope-p4;
+        @include gantari-p4;
 
         color: $cracked-gray-500;
       }
@@ -438,7 +438,7 @@
 
       .titleContainer {
         .title {
-          @include manrope-p1;
+          @include gantari-p1;
         }
       }
 
@@ -465,7 +465,7 @@
         gap: 10px;
 
         .descriptionText {
-          @include manrope-caption;
+          @include gantari-caption;
         }
       }
     }

@@ -8,3 +8,5 @@ type ContactForm = {
   createdAt: Date;
   status: boolean;
 };
+
+type NavItem = 'home' | 'rentals' | 'about' | 'contact' | 'login' | 'register';

@@ -3,7 +3,8 @@ import React, {useEffect} from 'react';
 import {ProductType} from '@types';
 
 import classes from './index.module.scss';
-import {Breadcrumb, MainContainer, CustomNavbar} from '@components';
+import {Breadcrumb, ESTNavbar} from '@components';
+import {MainContainer} from '@layouts';
 
 type Props = {
   productsData: ProductType[];

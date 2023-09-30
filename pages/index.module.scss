@@ -13,8 +13,73 @@
 
   gap: 140px;
   align-items: center;
+
   padding-top: 60px;
   padding-inline: 100px;
+
+  background-color: red;
+}
+
+/* launch section */
+
+.launchSection {
+  position: relative;
+
+  .launchCircle {
+    @include fixed-size(600px, 600px);
+
+    position: absolute;
+    z-index: -1;
+    top: -60px;
+    left: 5%;
+
+    background: linear-gradient(
+      90deg,
+      opacity($secondary-color-100, 0.005),
+      opacity($secondary-color-100, 0.05) 40%,
+      opacity($secondary-color-100, 0.1) 80%,
+      opacity($secondary-color-100, 0.2)
+    );
+    border-radius: 240px;
+    box-shadow:
+      200px 0 0 0 opacity($secondary-color-100, 0.1),
+      400px 0 0 0 opacity($secondary-color-100, 0.05),
+      600px 0 0 0 opacity($secondary-color-100, 0.01);
+  }
+
+  .leftSide {
+    @include flex(column);
+
+    gap: 30px;
+
+    .heading {
+      @include gantari-p3;
+
+      font-weight: 500;
+      color: $primary-color-500;
+      letter-spacing: 0.1em;
+    }
+
+    .title{
+      max-width: 580px;
+
+      @include gantari-h1;
+
+      font-weight: 600;
+      line-height: 0.9;
+      color: $text-color-1;
+    }
+
+    .description {
+      max-width: 580px;
+
+      @include gantari-p4;
+
+      font-weight: 300;
+      line-height: 1.5;
+      color: $text-color-3;
+    }
+  }
 }
 
 /* tablet & mobile */

@@ -17,6 +17,7 @@
     "paths": {
      "@assets": ["assets/index.ts"],
       "@components": ["components/index.ts"],
+      "@layouts": ["layouts/index.ts"],
       "@services": ["services/index.ts"],
       "@types": ["types/index.d.ts"],
       "@constants": ["constants/index.ts"],

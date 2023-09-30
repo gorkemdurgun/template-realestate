@@ -6,22 +6,16 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: Manrope, sans-serif;
+  font-family: Gantari, sans-serif;
   font-size: 18px;
 }
 
 
 
 @font-face {
-  font-family: Manrope;
+  font-family: Gantari;
   src:
-    local('Manrope'),
-    url('../assets/fonts/Manrope.ttf') format('truetype');
+    local('Gantari'),
+    url('../assets/fonts/Gantari.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: DynaPuff;
-  src:
-    local('DynaPuff'),
-    url('../assets/fonts/DynaPuff.ttf') format('truetype');
-}

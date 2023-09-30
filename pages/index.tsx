@@ -9,6 +9,8 @@ import {getProducts} from '@services';
 import {MainContainer} from 'layouts';
 
 import classes from './index.module.scss';
+import {SVG} from '@assets';
+import Image from 'next/image';
 
 type Props = {
   productsData: ProductType[];
@@ -22,7 +24,15 @@ export default function Home(props: Props) {
   const LaunchSection = () => {
     return (
       <div className={classes.launchSection}>
-        <CustomText className={classes.title} text="Lansman" />
+        <div className={classes.launchCircle} />
+        <div className={classes.leftSide}>
+          <CustomText className={classes.heading} text="REAL ESTATE" />
+          <CustomText className={classes.title} text="Hayalindeki evi bulacağın yer..." />
+          <CustomText
+            className={classes.description}
+            text="Eşsiz mimariler, merkezi lokasyonlar, ayrıcalıklı yaşam alanları ve sosyal imkanlarla dolu projeleri keşfetmeye hazır mısın?"
+          />
+        </div>
       </div>
     );
   };

@@ -14,7 +14,7 @@
   width: 300px;
 
   .cleanButton{
-    @include manrope-p4;
+    @include gantari-p4;
 
     padding: 8px;
     color: $funny-pink;
@@ -32,13 +32,13 @@
     gap: 10px;
 
     .searchLabel{
-      @include manrope-p4;
+      @include gantari-p4;
 
       color: $cracked-gray-800;
     }
 
     .searchInput{
-      @include manrope-p4;
+      @include gantari-p4;
 
       padding: 8px;
       border: 1px solid $cracked-gray-300;
@@ -57,13 +57,13 @@
     align-items: center;
 
     .filterLabel{
-      @include manrope-p4;
+      @include gantari-p4;
 
       color: $cracked-gray-800;
     }
 
     .filterSelect{
-      @include manrope-p4;
+      @include gantari-p4;
 
       padding: 8px;
       border: 1px solid $cracked-gray-300;
