@@ -3,23 +3,24 @@ import React, {useEffect, useState} from 'react';
 import {CustomText, FloatingWhatsappButton} from '@components';
 
 import Head from 'next/head';
-import {ProductType} from '@types';
 
-import {getProducts} from '@services';
+import {checkFirebaseConnection, getNoticesHouse} from '@services';
 import {MainContainer} from 'layouts';
 
 import classes from './index.module.scss';
-import {SVG} from '@assets';
-import Image from 'next/image';
 
 type Props = {
-  productsData: ProductType[];
+  noticesData: HouseProperties[];
 };
 
 export default function Home(props: Props) {
-  const {productsData} = props;
+  const {noticesData} = props;
 
   const [activeSection, setActiveSection] = useState('lansman');
+
+  useEffect(() => {
+    checkFirebaseConnection();
+  }, []);
 
   const LaunchSection = () => {
     return (
@@ -58,11 +59,11 @@ export default function Home(props: Props) {
 }
 
 export async function getStaticProps() {
-  const productsData = await getProducts();
+  const noticesData = await getNoticesHouse();
 
   return {
     props: {
-      productsData,
+      noticesData,
     },
   };
 }

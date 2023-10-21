@@ -1,7 +1,5 @@
 enum Collections {
-  Products = 'Products',
-  Users = 'users',
-  Contacts = 'contacts',
+  Notices = 'notices',
 }
 
 export {Collections};

@@ -1,4 +1,3 @@
-export * from './products';
-export * from './contact';
+export * from './notices/house';
 
 export * from './firebase';
