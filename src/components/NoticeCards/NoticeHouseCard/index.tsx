@@ -10,58 +10,86 @@ import {
   PiBracketsSquareDuotone as SquareMeterIcon,
   PiHouseSimpleDuotone as HouseTypeIcon,
 } from 'react-icons/pi';
+import {PriceFormatter} from '@utils';
 
 type Props = {
   noticeData: HouseProperties;
 };
 
+const formatNoticeType = (noticeType?: NoticeType) => {
+  switch (noticeType) {
+    case 'sale':
+      return 'Satılık';
+    case 'rent':
+      return 'Kiralık';
+    default:
+      return '';
+  }
+};
+
+const formatHouseType = (houseType?: HouseType) => {
+  switch (houseType) {
+    case 'apartment':
+      return 'Daire';
+    case 'residence':
+      return 'Rezidans';
+    case 'villa':
+      return 'Villa';
+    case 'detached_house':
+      return 'Müstakil Ev';
+    case 'mansion':
+      return 'Köşk';
+    case 'farm':
+      return 'Çiftlik Evi';
+    case 'summer_house':
+      return 'Yazlık';
+    case 'all_apartment':
+      return 'Bütün Apartman';
+    case 'waterside':
+      return 'Yalı';
+    default:
+      return 'Diğer';
+  }
+};
+
 export const NoticeHouseCard = ({noticeData}: Props) => {
-  const {id} = noticeData;
-
-  const randomNum = Math.floor(Math.random() * 1000);
-  const isEven = randomNum % 2 === 0;
-
-  const dummyImage =
-    'https://hips.hearstapps.com/hmg-prod/images/ef09869db8270fd18168717eafd63069l-m1392693734xd-w1020-h770-q80-1626190314.jpg?crop=0.611xw:1.00xh;0.171xw,0&resize=640:*';
-  const dummyRoomNumber = isEven ? '3+1' : '2+1';
-  const dummySquareMeter = isEven ? '120' : '80';
-  const houseType = isEven ? 'Daire' : 'Villa';
-  const dummyNoticeType = isEven ? 'Satılık' : 'Kiralık';
-
   return (
     <div className={classes.noticeHouseCard}>
       <div className={classes.topSide}>
         <div className={classes.imageWrapper}>
-          <Image className={classes.image} src={dummyImage} alt="notice" layout="fill" objectFit="cover" />
+          <Image className={classes.image} src={noticeData?.images?.[0]} alt="notice" layout="fill" objectFit="cover" />
         </div>
         <div className={classes.noticeType}>
-          <CustomText className={classes.text} text={dummyNoticeType} />
+          <CustomText className={classes.text} text={formatNoticeType(noticeData?.notice_type)} />
         </div>
       </div>
       <div className={classes.bottomSide}>
         <div className={classes.location}>
           <PinIcon className={classes.icon} />
-          <CustomText className={classes.text} text="İstanbul, Türkiye" />
+          <CustomText
+            className={classes.text}
+            text={noticeData?.address?.district + ', ' + noticeData?.address?.city}
+          />
         </div>
         <div className={classes.properties}>
           <div className={classes.item}>
             <RoomNumberIcon className={classes.icon} />
-            <CustomText className={classes.text} text={dummyRoomNumber} />
+            <CustomText className={classes.text} text={noticeData?.room_count} />
           </div>
           <div className={classes.item}>
             <SquareMeterIcon className={classes.icon} />
-            <CustomText className={classes.text} text={dummySquareMeter + 'm²'} />
+            <CustomText className={classes.text} text={noticeData?.square_meter_gross + 'm²'} />
           </div>
           <div className={classes.item}>
             <HouseTypeIcon className={classes.icon} />
-            <CustomText className={classes.text} text={houseType} />
+            <CustomText className={classes.text} text={formatHouseType(noticeData?.house_type)} />
           </div>
         </div>
         <div className={classes.actions}>
           <CustomButton className={classes.button} onClick={() => {}}>
             <CustomText className={classes.text} text="Detaylı İncele" />
           </CustomButton>
-          <CustomText className={classes.price} text="1.000.000 ₺" />
+          <CustomText className={classes.price} text={PriceFormatter.formatPrice(noticeData?.price)} />
         </div>
       </div>
     </div>

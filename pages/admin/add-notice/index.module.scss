@@ -1,0 +1,8 @@
+@import '@styles/main';
+
+.container{
+  @include flex(column);
+
+  gap: 10px;
+  max-width: 500px;
+}

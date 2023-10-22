@@ -12,28 +12,29 @@ type Address = {
 
 type GenericNoticeProperties = {
   id: string; // Kimlik
-  published_at: Date; // Yayınlanma Tarihi
-  address: Address; // Adres
-  title: string; // Başlık
-  description: string; // Açıklama
-  price: number; // Fiyat
-  notice_category: NoticeCategory; // İlan Kategorisi
-  notice_type: NoticeType; // İlan Tipi
-  square_meter_gross: number; // Brüt Metre Kare
+  published_at: string; // Yayınlanma Tarihi
+  images?: string[]; // Resimler
+  address?: Address; // Adres
+  title?: string; // Başlık
+  description?: string; // Açıklama
+  price?: number; // Fiyat
+  notice_category?: NoticeCategory; // İlan Kategorisi
+  notice_type?: NoticeType; // İlan Tipi
+  square_meter_gross?: number; // Brüt Metre Kare
   square_meter_net?: number; // Net Metre Kare
   credit_eligible?: boolean; // Krediye Uygun
   swap_eligible?: boolean; // Takasa Uygun
 };
 
 type HouseProperties = GenericNoticeProperties & {
-  house_type: HouseType; // Ev Tipi
-  room_count: NumberOfRooms; // Oda Sayısı
-  building_age: BuildingAgeType; // Bina Yaşı
-  heating_type: HeatingType; // Isınma Tipi
-  floor_location: number; // Bulunduğu Kat
-  floor_count: number; // Kat Sayısı
-  bathroom_count: number; // Banyo Sayısı
-  furnished: boolean; // Eşyalı-Eşyasız
+  house_type?: HouseType; // Ev Tipi
+  room_count?: NumberOfRooms; // Oda Sayısı
+  building_age?: BuildingAgeType; // Bina Yaşı
+  heating_type?: HeatingType; // Isınma Tipi
+  floor_location?: number; // Bulunduğu Kat
+  floor_count?: number; // Kat Sayısı
+  bathroom_count?: number; // Banyo Sayısı
+  furnished?: boolean; // Eşyalı-Eşyasız
   have_balcony?: boolean; // Balkon Varmı
   have_terrace?: boolean; // Teras Varmı
   have_garden?: boolean; // Bahçe Varmı

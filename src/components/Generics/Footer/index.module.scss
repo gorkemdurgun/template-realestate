@@ -104,7 +104,7 @@
         }
 
         .icon {
-          color: $dominant-green;
+          color: $real-gray-600;
           transition: color 0.2s ease-in-out;
 
           @include fixed-size(20px, 20px);
@@ -115,7 +115,7 @@
     .text {
       @include gantari-caption2;
 
-      color: $dominant-green;
+      color: $real-gray-600;
     }
   }
 

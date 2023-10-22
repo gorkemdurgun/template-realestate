@@ -21,6 +21,7 @@
       "@services": ["services/index.ts"],
       "@types": ["types/index.d.ts"],
       "@constants": ["constants/index.ts"],
+      "@utils": ["utils/index.ts"],
       "@styles/main": ["styles/main.scss"]
     },
     "typeRoots": ["node_modules/@types", "@types"]

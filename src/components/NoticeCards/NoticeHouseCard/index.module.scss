@@ -16,6 +16,15 @@
 
   &:hover{
     margin-top: -30px;
+
+    .topSide .noticeType{
+      background-color: $trust-blue-900;
+      box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+      
+      .text{
+        color: $real-gray-100;
+      }
+    }
   }
 
   .topSide {
@@ -47,11 +56,16 @@
 
       background-color: opacity($real-gray-200, 0.15);
       border-radius: 100px;
+      box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+
+      transition: background-color 0.3s ease-in-out;
+      
 
       .text{
         @include gantari-caption;
 
         color: $real-gray-200;
+        text-shadow: #000 0 0 4px;
       }
     }
   }

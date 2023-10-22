@@ -21,12 +21,16 @@ export default function Home(props: Props) {
   const {noticesData} = props;
 
   const [activeSection, setActiveSection] = useState('lansman');
+  const [notices, setNotices] = useState<HouseProperties[]>([]);
 
   const dummyImage =
     'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
   useEffect(() => {
     checkFirebaseConnection();
+    getNoticesHouse().then(res => {
+      setNotices(res);
+    });
   }, []);
 
   const LaunchSection = () => {
@@ -67,8 +71,8 @@ export default function Home(props: Props) {
           </CustomButton>
         </div>
         <div className={classes.list}>
-          {Array.from({length: 6}).map((_, index) => {
-            return <NoticeHouseCard noticeData={noticesData[0]} key={index} />;
+          {notices.map((item, index) => {
+            return <NoticeHouseCard noticeData={item} key={index} />;
           })}
         </div>
       </div>
