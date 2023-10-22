@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
-import {CustomText, FloatingWhatsappButton} from '@components';
+import {CustomButton, CustomText, FloatingWhatsappButton} from '@components';
 
-import {FaSearch as SearchIcon} from 'react-icons/fa';
+import {FaSearch as SearchIcon, FaArrowRight as ArrowRightIcon} from 'react-icons/fa';
 
 import Head from 'next/head';
 
@@ -11,6 +11,7 @@ import {MainContainer} from 'layouts';
 
 import classes from './index.module.scss';
 import Image from 'next/image';
+import {NoticeHouseCard} from '@components';
 
 type Props = {
   noticesData: HouseProperties[];
@@ -55,6 +56,25 @@ export default function Home(props: Props) {
     );
   };
 
+  const RecentlyAddedSection = () => {
+    return (
+      <div className={classes.recentlyAddedSection}>
+        <div className={classes.header}>
+          <CustomText className={classes.heading} text="Son Eklenenler" />
+          <CustomButton className={classes.explore} onClick={() => {}}>
+            <CustomText className={classes.text} text="Tümünü Gör" />
+            <ArrowRightIcon className={classes.icon} />
+          </CustomButton>
+        </div>
+        <div className={classes.list}>
+          {Array.from({length: 6}).map((_, index) => {
+            return <NoticeHouseCard noticeData={noticesData[0]} key={index} />;
+          })}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       <Head>
@@ -70,6 +90,7 @@ export default function Home(props: Props) {
       <FloatingWhatsappButton />
       <MainContainer activeSection={activeSection}>
         <LaunchSection />
+        <RecentlyAddedSection />
       </MainContainer>
     </>
   );

@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 100px;
-  background-color: $primary-color-500;
+  background-color: $real-gray-900;
 
   .itemGroup {
     @include flex(row);

@@ -1,0 +1,135 @@
+@import '@styles/main';
+
+.noticeHouseCard {
+  cursor: pointer;
+
+  position: relative;
+
+  display: grid;
+  grid-template-rows: 5fr auto;
+
+  background-color: $real-gray-100; 
+  border-radius: 12px;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+  
+  transition: margin-top 0.3s ease-in-out;
+
+  &:hover{
+    margin-top: -30px;
+  }
+
+  .topSide {
+    position: relative;
+
+    .imageWrapper {
+      position: relative;
+      min-height: 240px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+
+      @include fixed-size(100%, 100%);
+
+      .image {
+        @include fixed-size(100%, 100%);
+
+        object-fit: cover;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+    }
+
+    .noticeType{
+      position: absolute;
+      top: 16px;
+      right: 16px;
+
+      padding: 4px 16px;
+
+      background-color: opacity($real-gray-200, 0.15);
+      border-radius: 100px;
+
+      .text{
+        @include gantari-caption;
+
+        color: $real-gray-200;
+      }
+    }
+  }
+
+  .bottomSide {
+    @include flex(column);
+
+    gap: 16px;
+    padding-block: 20px;
+    padding-inline: 16px;
+
+    .location {
+      @include flex(row);
+
+      gap: 8px;
+      align-items: center;
+
+      .icon {
+        @include fixed-size(20px, 20px);
+
+        color: $trust-blue-700;
+      }
+
+      .text {
+        @include gantari-p4;
+
+        color: $trust-blue-700;
+      }
+    }
+
+    .properties {
+      @include flex(row);
+
+      gap: 20px;
+
+      .item {
+        @include flex(row);
+
+        gap: 4px;
+        align-items: center;
+
+        .icon {
+          @include fixed-size(16px, 16px);
+
+          color: $trust-blue-500;
+        }
+
+        .text {
+          @include gantari-p4;
+
+          color: $trust-blue-500;
+        }
+      }
+    }
+
+    .actions {
+      @include flex(row);
+
+      align-items: center;
+      justify-content: space-between;
+
+      .button {
+        padding: 8px 24px;
+        background-color: $real-gray-200;
+
+        .text {
+          @include gantari-p4;
+
+          font-weight: 500;
+          color: $text-color-1; 
+        }
+      }
+
+      .price {
+        @include gantari-p4;
+
+        color: $trust-blue-900;
+      }
+    }
+  }
+}
