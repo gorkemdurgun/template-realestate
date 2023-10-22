@@ -25,6 +25,14 @@
 .launchSection {
   position: relative;
 
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  height: 500px;
+
+  @include grid(2);
+
   .launchCircle {
     @include fixed-size(600px, 600px);
 
@@ -51,33 +59,80 @@
     @include flex(column);
 
     gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
 
-    .heading {
-      @include gantari-p3;
+    .texts {
+      @include flex(column);
 
-      font-weight: 500;
-      color: $primary-color-500;
-      letter-spacing: 0.1em;
+      gap: 20px;
+
+      .heading {
+        @include gantari-p3;
+
+        font-weight: 500;
+        color: $primary-color-500;
+        letter-spacing: 0.1em;
+      }
+
+      .title {
+        max-width: 580px;
+
+        @include gantari-h1;
+
+        font-weight: 600;
+        line-height: 0.9;
+        color: $text-color-1;
+      }
+
+      .description {
+        max-width: 580px;
+
+        @include gantari-p4;
+
+        font-weight: 300;
+        line-height: 1.5;
+        color: $text-color-3;
+      }
     }
 
-    .title{
-      max-width: 580px;
+    .searchBar {
+      display: flex;
 
-      @include gantari-h1;
+      .searchInput {
+        width: 500px;
+        padding: 16px 24px;
 
-      font-weight: 600;
-      line-height: 0.9;
-      color: $text-color-1;
+        border: 1px solid $real-gray-200;
+        border-radius: 24px;
+        outline: none;
+        box-shadow: 0 4px 12px 0 rgba($real-gray-200, 0.5);
+
+        @include gantari-p2;
+
+        .searchIcon {
+          position: absolute;
+          top: 50%;
+          right: 24px;
+        }
+      }
     }
+  }
 
-    .description {
-      max-width: 580px;
+  .rightSide {
+    @include flex(column);
 
-      @include gantari-p4;
+    @include fixed-size(700px, 600px);
 
-      font-weight: 300;
-      line-height: 1.5;
-      color: $text-color-3;
+    .imageWrapper {
+      position: relative;
+
+      @include fixed-size(100%, 100%);
+
+      .image {
+        border-radius: 200px;
+      }
     }
   }
 }

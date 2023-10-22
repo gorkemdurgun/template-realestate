@@ -19,3 +19,9 @@ body {
     url('../assets/fonts/Gantari.ttf') format('truetype');
 }
 
+@font-face{
+  font-family: Cuprum;
+  src:
+    local('Cuprum'),
+    url('../assets/fonts/Cuprum.ttf') format('truetype');
+}

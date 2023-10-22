@@ -102,3 +102,73 @@
 
   font-size: 0.6rem;
 }
+
+
+/* Cuprum */
+
+@mixin font-cuprum {
+  font-family: Cuprum, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin cuprum-h1 {
+  @include font-cuprum;
+
+  font-size: 3.5rem;
+}
+
+@mixin cuprum-h2 {
+  @include font-cuprum;
+
+  font-size: 3rem;
+}
+
+@mixin cuprum-h3 {
+  @include font-cuprum;
+
+  font-size: 2.5rem;
+}
+
+@mixin cuprum-h4 {
+  @include font-cuprum;
+
+  font-size: 2rem;
+}
+
+@mixin cuprum-p1 {
+  @include font-cuprum;
+
+  font-size: 1.8rem;
+}
+
+@mixin cuprum-p2 {
+  @include font-cuprum;
+
+  font-size: 1.5rem;
+}
+
+@mixin cuprum-p3 {
+  @include font-cuprum;
+
+  font-size: 1.2rem;
+}
+
+@mixin cuprum-p4 {
+  @include font-cuprum;
+
+  font-size: 1rem;
+}
+
+@mixin cuprum-caption {
+  @include font-cuprum;
+
+  font-size: 0.8rem;
+}
+
+@mixin cuprum-caption2 {
+  @include font-cuprum;
+
+  font-size: 0.6rem;
+}
+

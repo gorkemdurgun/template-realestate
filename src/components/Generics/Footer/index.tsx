@@ -9,10 +9,10 @@ export const Footer = () => {
   return (
     <div id="footer" className={classes.footerContainer}>
       <div className={classes.footerLeft}>
-        <CustomImageBox className={classes.logo} src={SVG.LogoPetneedings} alt="Logo" />
+        <CustomImageBox className={classes.logo} src={SVG.LogoNXT} alt="Logo" />
         <span className={classes.textContainer}>
           <CustomText className={classes.text} text="© 2021 All Rights Reserved." />
-          <CustomText className={classes.text} text="Designed by Pet Needings" />
+          <CustomText className={classes.text} text="Designed by GD" />
         </span>
       </div>
       <div className={classes.footerRight}>
