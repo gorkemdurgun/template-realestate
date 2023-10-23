@@ -1,8 +1,134 @@
 @import '@styles/main';
 
-.container{
+.container {
   @include flex(column);
 
-  gap: 10px;
-  max-width: 500px;
+  gap: 30px;
+  padding-block: 40px 140px;
+  padding-inline: 100px;
+  background-color: $real-gray-200;
+}
+
+.formContainer {
+  @include grid(2);
+
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.formSection {
+  @include flex(column);
+
+  gap: 5px;
+
+  .header {
+    @include gantari-p2;
+
+    margin-bottom: 10px;
+    color: $trust-blue-800;
+  }
+}
+
+.checkSection {
+  @include flex(column);
+
+  gap: 5px;
+
+  .header {
+    @include gantari-p2;
+
+    margin-bottom: 10px;
+    color: $trust-blue-800;
+  }
+
+  .list {
+    @include grid(3);
+
+    gap: 10px;
+    margin-top: 30px;
+
+    .checkItem {
+      @include flex(row);
+
+      gap: 5px;
+
+      .checkbox {
+        width: 20px;
+        height: 20px;
+      }
+
+      .checkLabel {
+        @include gantari-p3;
+
+        color: $trust-blue-800;
+      }
+    }
+  }
+}
+
+.formItem {
+  @include flex(column);
+
+  gap: 5px;
+
+  .input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+
+    @include gantari-p4;
+  }
+
+  .select {
+    padding: 8.605px;
+    border: none;
+    border-radius: 5px;
+
+    @include gantari-p4;
+  }
+}
+
+.buttonContainer {
+  @include flex(row);
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  padding: 20px 100px;
+
+  background-color: $action-orange-2;
+
+  .cancelButton {
+    cursor: pointer;
+
+    @include gantari-p4;
+
+    padding: 10px 40px;
+
+    color: $text-color-6;
+
+    background-color: $real-gray-900;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .submitButton {
+    cursor: pointer;
+
+    @include gantari-p4;
+
+    padding: 10px 40px;
+
+    color: $text-color-1;
+
+    background-color: $real-gray-100;
+    border: none;
+    border-radius: 5px;
+  }
 }

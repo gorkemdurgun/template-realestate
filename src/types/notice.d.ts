@@ -1,5 +1,6 @@
 type NoticeType = 'rent' | 'sale';
 type NoticeCategory = 'house' | 'workplace' | 'plot';
+type NoticeStatus = 'active' | 'hidden' | 'rented' | 'sold';
 
 type Address = {
   city: string; // Şehir
@@ -16,7 +17,9 @@ type GenericNoticeProperties = {
   images?: string[]; // Resimler
   address?: Address; // Adres
   title?: string; // Başlık
-  description?: string; // Açıklama
+  description?: {
+    [lang: string]: string; // Dil
+  }; // Açıklama
   price?: number; // Fiyat
   notice_category?: NoticeCategory; // İlan Kategorisi
   notice_type?: NoticeType; // İlan Tipi
@@ -24,6 +27,7 @@ type GenericNoticeProperties = {
   square_meter_net?: number; // Net Metre Kare
   credit_eligible?: boolean; // Krediye Uygun
   swap_eligible?: boolean; // Takasa Uygun
+  status?: NoticeStatus; // Durumu
 };
 
 type HouseProperties = GenericNoticeProperties & {
@@ -41,6 +45,7 @@ type HouseProperties = GenericNoticeProperties & {
   have_parking?: boolean; // Park Yeri Varmı
   have_elevator?: boolean; // Asansör Varmı
   have_due?: boolean; // Aidat Varmı
+  due_amount?: number; // Aidat Tutarı
   in_site?: boolean; // Site İçerisinde
   site_name?: string; // Site Adı
 };
