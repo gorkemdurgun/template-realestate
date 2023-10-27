@@ -14,14 +14,14 @@ import Image from 'next/image';
 import {NoticeHouseCard} from '@components';
 
 type Props = {
-  noticesData: HouseProperties[];
+  noticesData: ApartmentProperties[];
 };
 
 export default function Home(props: Props) {
   const {noticesData} = props;
 
   const [activeSection, setActiveSection] = useState('lansman');
-  const [notices, setNotices] = useState<HouseProperties[]>([]);
+  const [notices, setNotices] = useState<ApartmentProperties[]>([]);
 
   const dummyImage =
     'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';

@@ -2,7 +2,7 @@ import {collection, doc, setDoc} from '@firebase/firestore';
 import {firestore} from '../../../../firebase-config';
 import {Collections} from '../../collections';
 
-export const addNoticeHouse = async (notice: HouseProperties) => {
+export const addNoticeHouse = async (notice: ApartmentProperties) => {
   const noticesRef = collection(firestore, Collections.Notices);
   const newNoticeRef = doc(noticesRef);
   const newNotice = {

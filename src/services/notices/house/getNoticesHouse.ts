@@ -6,5 +6,5 @@ export const getNoticesHouse = async () => {
   const noticesCollection = collection(firestore, Collections.Notices);
   const noticesSnapshot = await getDocs(noticesCollection);
   const notices = noticesSnapshot.docs.map(doc => doc.data());
-  return notices as HouseProperties[];
+  return notices as ApartmentProperties[];
 };

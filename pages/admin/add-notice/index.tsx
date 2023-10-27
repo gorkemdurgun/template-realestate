@@ -6,7 +6,7 @@ import classes from './index.module.scss';
 import {CustomText} from '@components';
 
 const AddNotice: NextPage = () => {
-  const [newNotice, setNewNotice] = useState<HouseProperties>({
+  const [newNotice, setNewNotice] = useState<ApartmentProperties>({
     published_at: Date.now().toString(),
     id: '',
     title: '',
@@ -50,7 +50,7 @@ const AddNotice: NextPage = () => {
     swap_eligible: false,
     price: 0,
     room_count: '1+0',
-  } as HouseProperties);
+  } as ApartmentProperties);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewNotice({...newNotice, [e.target.name]: e.target.value});

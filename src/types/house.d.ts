@@ -1,6 +1,5 @@
 type HouseType =
   | 'apartment' // Apartman Dairesi
-  | 'all_apartment' // Bütün Apartman
   | 'residence' // Rezidans
   | 'detached_house' // Müstakil Ev
   | 'summer_house' // Yazlık
@@ -19,6 +18,12 @@ type HeatingType =
   | 'coal' // Kömür
   | 'electricity' // Elektrik
   | 'other'; // Diğer
+
+type StructuralType =
+  | 'steel' // Çelik
+  | 'wooden' // Ahşap
+  | 'stone' // Taş
+  | 'reinforced_concrete'; // Betonarme
 
 type BuildingAgeType =
   | '0-2'

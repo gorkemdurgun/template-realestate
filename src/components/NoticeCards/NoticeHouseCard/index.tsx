@@ -13,7 +13,7 @@ import {
 import {PriceFormatter} from '@utils';
 
 type Props = {
-  noticeData: HouseProperties;
+  noticeData: ApartmentProperties;
 };
 
 const formatNoticeType = (noticeType?: NoticeType) => {
