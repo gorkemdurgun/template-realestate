@@ -1,0 +1,59 @@
+@import '@styles/main';
+
+/* recently added section */
+.recentlyAddedSection {
+  @include flex(column);
+
+  gap: 40px;
+  align-items: flex-start;
+
+  margin-block: 100px;
+  padding-bottom: 40px;
+  padding-inline: 100px;
+
+  background: linear-gradient(0deg, $trust-blue-900 0%, $trust-blue-900 70%, $neutral-white 70%, $neutral-white 100%);
+
+
+
+.header {
+  @include flex(row);
+
+  gap: 20px ;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .text {
+    @include gantari-h3;
+
+    color: $text-color-2;
+  }
+
+  .explore{
+    @include flex(row);
+
+    gap: 8px;
+    align-items: center;
+
+    .text{
+      @include gantari-p4;
+
+      color: $text-color-2;
+    }
+
+    .icon {
+      @include fixed-size(16px, 16px);
+  
+      color: $text-color-2;
+    }
+  }
+}
+
+.list {
+  @include grid(3);
+
+  gap: 50px 60px;
+  width: 100%;
+}
+}
+

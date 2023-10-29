@@ -7,3 +7,4 @@ export * from './NoticeCards';
 
 /* New Components */
 export * from './ESTNavbar';
+export * from './HomeBasis';

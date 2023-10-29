@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {MutableRefObject, useEffect, useState} from 'react';
 
-import {CustomButton, CustomText, FloatingWhatsappButton} from '@components';
+import {CustomButton, CustomText, FloatingWhatsappButton, LaunchSection, RecentlyAddedSection} from '@components';
 
 import {FaSearch as SearchIcon, FaArrowRight as ArrowRightIcon} from 'react-icons/fa';
 
@@ -12,6 +12,7 @@ import {MainContainer} from 'layouts';
 import classes from './index.module.scss';
 import Image from 'next/image';
 import {NoticeHouseCard} from '@components';
+import {animated, useScroll, useSpring} from '@react-spring/web';
 
 type Props = {
   noticesData: ApartmentProperties[];
@@ -23,9 +24,6 @@ export default function Home(props: Props) {
   const [activeSection, setActiveSection] = useState('lansman');
   const [notices, setNotices] = useState<ApartmentProperties[]>([]);
 
-  const dummyImage =
-    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
-
   useEffect(() => {
     checkFirebaseConnection();
     getNoticesHouse().then(res => {
@@ -33,51 +31,24 @@ export default function Home(props: Props) {
     });
   }, []);
 
-  const LaunchSection = () => {
-    return (
-      <div className={classes.launchSection}>
-        <div className={classes.launchCircle} />
+  const mainRef = React.useRef<HTMLDivElement>(null);
 
-        <div className={classes.leftSide}>
-          <span className={classes.texts}>
-            <CustomText className={classes.heading} text="REAL ESTATE" />
-            <CustomText className={classes.title} text="Hayalindeki evi bulacağın yer..." />
-            <CustomText
-              className={classes.description}
-              text="Eşsiz mimariler, merkezi lokasyonlar, ayrıcalıklı yaşam alanları ve sosyal imkanlarla dolu projeleri keşfetmeye hazır mısın?"
-            />
-          </span>
-          <div className={classes.searchBar}>
-            <input className={classes.searchInput} type="text" placeholder="Ara..." />
-          </div>
-        </div>
-        <div className={classes.rightSide}>
-          <div className={classes.imageWrapper}>
-            <Image className={classes.image} src={dummyImage} alt="launch" layout="fill" objectFit="cover" />
-          </div>
-        </div>
-      </div>
-    );
-  };
+  const [listAnimationStyles, listAnimationApi] = useSpring(() => ({
+    opacity: 0,
+    transform: 'translateY(100px)',
+  }));
 
-  const RecentlyAddedSection = () => {
-    return (
-      <div className={classes.recentlyAddedSection}>
-        <div className={classes.header}>
-          <CustomText className={classes.heading} text="Son Eklenenler" />
-          <CustomButton className={classes.explore} onClick={() => {}}>
-            <CustomText className={classes.text} text="Tümünü Gör" />
-            <ArrowRightIcon className={classes.icon} />
-          </CustomButton>
-        </div>
-        <div className={classes.list}>
-          {notices.map((item, index) => {
-            return <NoticeHouseCard noticeData={item} key={index} />;
-          })}
-        </div>
-      </div>
-    );
-  };
+  useScroll({
+    container: mainRef as MutableRefObject<HTMLDivElement>,
+    onChange: ({value: {scrollYProgress}}) => {
+      if (scrollYProgress > 0.3) {
+        listAnimationApi.start({
+          opacity: 1,
+          transform: 'translateY(0px)',
+        });
+      }
+    },
+  });
 
   return (
     <>
@@ -94,7 +65,10 @@ export default function Home(props: Props) {
       <FloatingWhatsappButton />
       <MainContainer activeSection={activeSection}>
         <LaunchSection />
-        <RecentlyAddedSection />
+        <RecentlyAddedSection
+          listAnimationStyle={listAnimationStyles}
+          notices={notices.concat(notices).concat(notices)}
+        />
       </MainContainer>
     </>
   );
