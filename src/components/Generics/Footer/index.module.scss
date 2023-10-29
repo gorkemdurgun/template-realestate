@@ -6,8 +6,11 @@
   @include grid(2);
 
   grid-template-columns: 1fr 2fr;
+
   width: 100%;
+  margin-top: 120px;
   padding-block: 40px;
+
   background: $trust-blue-800;
   
 

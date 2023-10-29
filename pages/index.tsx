@@ -1,6 +1,13 @@
 import React, {MutableRefObject, useEffect, useState} from 'react';
 
-import {CustomButton, CustomText, FloatingWhatsappButton, LaunchSection, RecentlyAddedSection} from '@components';
+import {
+  CustomButton,
+  CustomText,
+  FloatingWhatsappButton,
+  LaunchSection,
+  QuakeAnalysisSection,
+  RecentlyAddedSection,
+} from '@components';
 
 import {FaSearch as SearchIcon, FaArrowRight as ArrowRightIcon} from 'react-icons/fa';
 
@@ -37,12 +44,22 @@ export default function Home(props: Props) {
     opacity: 0,
     transform: 'translateY(100px)',
   }));
+  const [quakeAnalysisSectionAnimationStyles, quakeAnalysisSectionAnimationApi] = useSpring(() => ({
+    opacity: 0,
+    transform: 'translateY(100px)',
+  }));
 
   useScroll({
     container: mainRef as MutableRefObject<HTMLDivElement>,
     onChange: ({value: {scrollYProgress}}) => {
-      if (scrollYProgress > 0.3) {
+      if (scrollYProgress > 0.1) {
         listAnimationApi.start({
+          opacity: 1,
+          transform: 'translateY(0px)',
+        });
+      }
+      if (scrollYProgress > 0.6) {
+        quakeAnalysisSectionAnimationApi.start({
           opacity: 1,
           transform: 'translateY(0px)',
         });
@@ -69,6 +86,7 @@ export default function Home(props: Props) {
           listAnimationStyle={listAnimationStyles}
           notices={notices.concat(notices).concat(notices)}
         />
+        <QuakeAnalysisSection sectionAnimationStyle={quakeAnalysisSectionAnimationStyles} />
       </MainContainer>
     </>
   );

@@ -30,18 +30,9 @@ import Pets2 from './images/jpgs/pets-2.jpg';
 import Pets3 from './images/jpgs/pets-3.jpg';
 
 /* png */
-import LaunchPets from './images/pngs/launch-pets.png';
-import LaunchPets1 from './images/pngs/launch-pets-1.png';
-import LaunchCat1 from './images/pngs/launch-cat-1.png';
-import LaunchCat2 from './images/pngs/launch-cat-2.png';
-import LaunchDog1 from './images/pngs/launch-dog-1.png';
-import LaunchDog2 from './images/pngs/launch-dog-2.png';
-import BannerCat from './images/pngs/banner-cat.png';
-import BannerCat2 from './images/pngs/banner-cat-2.png';
-import BannerCat3 from './images/pngs/banner-cat-3.png';
-import BannerDog from './images/pngs/banner-dog.png';
-import BannerDog2 from './images/pngs/banner-dog-2.png';
 import EstateLogo from './images/pngs/estate-logo.png';
+import TurkeyMap from './images/pngs/turkey-map.png';
+import QuakeImage from './images/pngs/quake-image.png';
 
 /* temporary */
 import TempProd1 from './images/temporary/prod-1.png';
@@ -79,18 +70,9 @@ export const JPG = {
 };
 
 export const PNG = {
-  LaunchPets,
-  LaunchPets1,
-  LaunchCat1,
-  LaunchCat2,
-  LaunchDog1,
-  LaunchDog2,
-  BannerCat,
-  BannerCat2,
-  BannerCat3,
-  BannerDog,
-  BannerDog2,
   EstateLogo,
+  TurkeyMap,
+  QuakeImage,
 };
 
 export const TEMP = {

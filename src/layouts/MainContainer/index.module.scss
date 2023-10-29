@@ -4,12 +4,17 @@
 
 .mainContainer {
   @include flex(column);
+
+  align-items: center;
 }
 
 .mainContent {
   @include flex(column);
 
-  gap: 80px;
+  gap: 140px;
+
+  width: 100%;
+  max-width: 2160px;
   min-height: 100vh;
   padding-block: 60px 0;
   padding-inline: 0;

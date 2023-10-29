@@ -33,13 +33,12 @@
   @include grid(2);
 
   grid-template-columns: 3fr 4fr;
-  gap: 40px;
+  gap: 80px;
   align-items: flex-start;
   justify-content: space-between;
 
   height: 500px;
   margin-inline: 100px;
-
 
   .launchCircle {
     @include fixed-size(600px, 600px);
@@ -136,9 +135,7 @@
 
     @include fixed-size(100%, 600px);
 
-    min-width: 700px;
-   
-
+    min-width: 600px;
 
     .imageWrapper {
       position: relative;
@@ -147,7 +144,6 @@
 
       border-radius: 200px;
       animation: image-animation 1s linear;
-
 
       .image {
         border-radius: 200px;
