@@ -58,7 +58,7 @@ export default function Home(props: Props) {
           transform: 'translateY(0px)',
         });
       }
-      if (scrollYProgress > 0.6) {
+      if (scrollYProgress > 0.7) {
         quakeAnalysisSectionAnimationApi.start({
           opacity: 1,
           transform: 'translateY(0px)',

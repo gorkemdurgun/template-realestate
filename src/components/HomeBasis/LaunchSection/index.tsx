@@ -1,6 +1,8 @@
 import React from 'react';
 
-import {CustomText} from '@components';
+import {CustomButton, CustomText} from '@components';
+
+import {FaSearch as SearchIcon} from 'react-icons/fa';
 
 import classes from './index.module.scss';
 
@@ -23,7 +25,51 @@ export const LaunchSection = () => {
           />
         </span>
         <div className={classes.searchBar}>
-          <input className={classes.searchInput} type="text" placeholder="Ara..." />
+          <span className={classes.selectItem}>
+            <CustomText className={classes.label} text="Şehir" />
+            <select className={classes.dropdown} placeholder="Şehir">
+              <option className={classes.option} value="1">
+                İstanbul
+              </option>
+              <option className={classes.option} value="2">
+                İzmir
+              </option>
+              <option className={classes.option} value="3">
+                Ankara
+              </option>
+            </select>
+          </span>
+          <span className={classes.selectItem}>
+            <CustomText className={classes.label} text="Oda Sayısı" />
+            <select className={classes.dropdown} placeholder="Oda Sayısı">
+              <option className={classes.option} value="1">
+                1+1
+              </option>
+              <option className={classes.option} value="2">
+                2+1
+              </option>
+              <option className={classes.option} value="3">
+                3+1
+              </option>
+            </select>
+          </span>
+          <span className={classes.selectItem}>
+            <CustomText className={classes.label} text="Fiyat Aralığı" />
+            <select className={classes.dropdown} placeholder="Fiyat Aralığı">
+              <option className={classes.option} value="1">
+                100.000 - 200.000
+              </option>
+              <option className={classes.option} value="2">
+                200.000 - 300.000
+              </option>
+              <option className={classes.option} value="3">
+                300.000 - 400.000
+              </option>
+            </select>
+          </span>
+          <CustomButton className={classes.searchButton} onClick={() => {}}>
+            <SearchIcon className={classes.icon} />
+          </CustomButton>
         </div>
       </div>
       <div className={classes.rightSide}>

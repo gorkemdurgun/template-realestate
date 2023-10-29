@@ -108,23 +108,59 @@
     }
 
     .searchBar {
-      display: flex;
+      @include flex(row);
 
-      .searchInput {
-        width: 500px;
-        padding: 16px 24px;
+      gap: 10px;
 
-        border: 1px solid $real-gray-200;
-        border-radius: 24px;
-        outline: none;
-        box-shadow: 0 4px 12px 0 rgba($real-gray-200, 0.5);
+      min-width: 500px;
+      padding: 12px 20px;
 
-        @include gantari-p2;
+      outline: none;
+      box-shadow: 0 4px 12px 0 rgba($real-gray-400, 0.5);
 
-        .searchIcon {
-          position: absolute;
-          top: 50%;
-          right: 24px;
+      .selectItem {
+        @include flex(column);
+
+        gap: 4px;
+
+        .label {
+          @include gantari-caption;
+
+          color: $text-color-3;
+        }
+
+        .dropdown {
+          position: relative;
+
+          @include gantari-p4;
+
+          min-width: 100px;
+          padding: 4px;
+          padding-right: 8px;
+
+          color: $text-color-2;
+
+          border: 1px solid $real-gray-400;
+          border-radius: 8px;
+          outline: none;
+        }
+      }
+
+      .searchButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: fit-content;
+        margin-left: 20px;
+
+        background-color: $action-orange;
+        border-radius: 200px;
+
+        .icon {
+          width: 24px;
+          height: 24px;
+          color: $neutral-white;
         }
       }
     }
